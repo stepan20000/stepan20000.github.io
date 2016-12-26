@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Codystar|Harmattan|Indie+Flower');
+body {
+	background-color: #999;
+	color: #333;
+	background-image: url(../images/background.jpg);
+	/*background-size: 100%;*/
+	background-attachment: fixed;
+}
+
+h1 {
+	color: #ddd;
+	text-align: center;
+	font-family: 'Codystar', cursive;
+}
+
+h2 {
+	color: #ddd;
+	text-align: center;
+	font-family: 'Nosifer', cursive;
+}
+
+h4 {
+	text-align: center;
+	font-family: 'Harmattan', sans-serif;
+	font-size: 25px;
+
+}
+
+#resume p {
+	font-family: 'Harmattan', sans-serif;
+	font-size: 25px;
+	text-align: left;
+	margin-left: 10%;
+}
+
+.bwi {
+	filter: grayscale(100%);
+}
+
+
+.inscription {
+	height: 180px; 
+	width: 100%; 
+	opacity: 1; 
+	color: rgba(230, 230, 230, 0.6); 
+	margin-left: 5%;
+	position: fixed;
+	font-family: 'Indie Flower', cursive;
+	font-size: 100%;
+}
+
+.item, .item h2  {
+	background-color: #222;
+	margin-top: 0;
+	font-family: 'Codystar', cursive;
+	font-size: 25px;
+	color: #fff;
+}
+
+.transperent-bt {
+	/*background-color: rgba(256, 256, 256, 0.8);*/
+	background-image: url(../images/white-brick.jpg);
+}
+
+.skill {
+	width: 70%;
+}
+
+.about h3, .resume h3 {
+	color: #000;
+	font-family: 'Harmattan', sans-serif;
+	font-size: 200%;
+}
+#about p {
+	color: #000;
+	font-family: 'Harmattan', sans-serif;
+	font-size: 180%;
+}
+
+
+.contact-icon {
+	font-size: 40px !important;
+	color: #fff; 
+	margin: auto 10px;
+}
+
+.contact-icon:hover {
+	transform: scale(1.5);
+	transition: all .5s;
+}
+
+.scale:hover {
+	transform: scale(1.1);
+	transition: all .5s;	
+}
+
+.my_works img {
+	margin: auto auto;
+	width: 100%;
+	background: #fff;
+	padding: 5%;
+	border-radius: 10%;
+	
+}
+
+
+
+
+#page {
+	background-color: #fff;
+	background-image: url(../images/background-page.jpg); 
+	/*background-repeat: no-repeat;*/
+	background-attachment: fixed;    
+	background-position-y: top;
+	background-size: 100%;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #000;
+}
+
+.copyright {
+	align-content: right;
+	text-align: right;
+	color: #fff;
+}
+.copyright p {
+	margin-right: 40px;
+}
+
+#contacts h3 {
+	color: #fff;
+	font-family: 'Harmattan', sans-serif;
+	font-size: 25px;
+}
+
+#blnk {
+	margin-bottom: 2%;
+	}
+
+.navbar {
+	font-family: 'Harmattan', sans-serif;
+	font-size: 20px;
+}
+
+#my-foto-img {
+	width: 80%;
+	margin: 5%;
+	border-radius: 15px;
+	border-width: 3px;
+	border-color: #bbb;
+	border-style: solid;
+}
+
+.my-foto {
+	width: 45%;
+	float: left;
+	margin-left: 10px;
+}
+.my-text {
+	margin-right: 5%;
+	margin-left: 5%;
