@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat|Merriweather+Sans:400i');
+body, html {
+	width: 100%;
+	height: 100%;
+	background-color: #333;
+}
+.page {
+	min-width: 100%;
+	min-height: 100%;
+	position: absolute;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url(https://placem.at/things?random=1);
+}
+.box {
+	border-width: 5px;
+	border-style: solid;
+	border-color: #cca;
+	border-radius: 5px;
+	position:  relative;
+	margin: 7% auto auto auto;
+	background-color: #ddd;
+	width: 500px;
+	padding: 40px 50px;
+}
+.buttons{
+	text-align: justify;
+	padding-bottom: 3%;
+}
+.footer{
+	position: fixed;
+   left: 0; 
+	font-size: 10px;
+  	right: 0;
+  	bottom: 10px;
+  	width: 100%;
+  	height: 15px;
+  	color: white;
+  	text-align: right;
+  	padding-right: 5%;
+}
+#getQuote{
+	float: right;
+	margin-right: 5px;
+}
+.tweet{
+	float: left;
+	margin-left: 5px;
+}
+.author{
+	font-family: 'Caveat', cursive; 
+	text-align: center;
+}
+.quote{
+	font-family: 'Merriweather Sans', sans-serif;
+}

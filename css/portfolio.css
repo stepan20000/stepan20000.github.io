@@ -2,7 +2,7 @@
 body {
 	background-color: #999;
 	color: #333;
-	background-image: url(../images/background-body.jpg);
+	background-image: url(http://res.cloudinary.com/dtnyso8nn/image/upload/v1483688154/portfolio/background-body.jpg);
 	/*background-size: 100%;*/
 	background-attachment: fixed;
 }
@@ -59,7 +59,7 @@ h4 {
 
 .transperent-bt {
 	/*background-color: rgba(256, 256, 256, 0.8);*/
-	background-image: url(../images/white-brick.jpg);
+	background-image: url(http://res.cloudinary.com/dtnyso8nn/image/upload/v1483688156/portfolio/white-brick.jpg);
 }
 
 .skill {
@@ -108,7 +108,7 @@ h4 {
 
 #page {
 	background-color: #fff;
-	background-image: url(../images/background-page.jpg); 
+	background-image: url(http://res.cloudinary.com/dtnyso8nn/image/upload/v1483688154/portfolio/background-page.jpg); 
 	/*background-repeat: no-repeat;*/
 	background-attachment: fixed;    
 	background-position-y: top;
@@ -159,3 +159,4 @@ h4 {
 .my-text {
 	margin-right: 5%;
 	margin-left: 5%;
+}
