@@ -25,7 +25,7 @@
   //Declare function getQuote
   function getQuote() {
   		// Declare variable with our url with quote
-		var quoteUrl = "http://quotes.stormconsultancy.co.uk/random.json"
+		var quoteUrl = "http://quotes.stormconsultancy.co.uk/random.json";
       // Call our first function doCORSRequest and give it as agrument an object with method and url
       // function printResult parses respond and print a result in to html 
       doCORSRequest({

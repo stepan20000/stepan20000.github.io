@@ -1,76 +1,74 @@
-/*$(document).ready(function() {
-	var loc = { lat: 0, lon: 0 }; 
-	var url = "http://api.openweathermap.org/data/2.5/weather?" 
-	key = "916819ad322d699ea2d8f94cf94c42cd";
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			loc.lat = position.coords.latitude;
-			loc.lon = position.coords.longitude;
-			url = url + "lat=" + loc.lat +"&lon=" + loc.lon;
-			$(".location").html("latitude: " + loc.lat + "<br>longitude: " + loc.lon);
-		});
-	}
-	else {
-		alert("Can't access your location");
-	}
-	$.getJSON("http://quotes.stormconsultancy.co.uk/random.json", function(wheather) {
-		console.log("getJSON is a function");
-	});
-});*/
+// All comments are for not experienced peoples like me now
 
-/*  $(document).ready(function() {
+//Make a variable cors_api_url which now contains url 'https://cors-anywhere.herokuapp.com/'
+  var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+ //Declare function doCORSRequest which takes two arguments options and printResult (printResult is a function)  
+  function doCORSRequest(options, printResult) {
+	// In a function call the constructor and make new request x
+    var x = new XMLHttpRequest();
+	// Initialize request by call the open method of the х request, and give it parameters:
+	//options.method - here should be(GET) and url in our case url consists of
+	//cors_api_url + options.url where options.url is a property url of the options object, take the method (GET) also  
+	// from the options object. Remember that all object options we give to the function doCORSRequest as
+	// an argument 
+    x.open(options.method, cors_api_url + options.url);
+    // Call methods onload and onerror of our request х, it means that when events x.onload or x.onerror  
+    //is come we will perform function which just call printResult with argument x response. x.response is 
+    // a string with information obtained from api.
+    x.onload = x.onerror = function() {
+      printResult(x.response);
+    };
 
-	$.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&APPID=916819ad322d699ea2d8f94cf94c42cd", function(json) {
-     var html = "";
-     console.log(json.coord.lon);
-     console.log(json.base);
-     $(".json").html(json.coord.lon);
-        json.forEach(function(val) {
-				var keys = Object.keys(val);
-				html += "<div class = 'cat'>";
-				keys.forEach(function(key) {
-					html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
-				});
-					html += "</div><br>";
-        });
-        
-		$(".container-fluid").html(html);	
-   });
+    //Send request
+    x.send();
+  }
 
+  //Declare function getWeather
+  function getWeather(loc) {
+  		var key = "APPID=916819ad322d699ea2d8f94cf94c42cd"; 
+  		// Use loc object to make our weather url
+		var weatherUrl = "http://api.openweathermap.org/data/2.5/weather?"+key+"&lat="+loc.lat+"&lon="+loc.lon;
+      // Call our first function doCORSRequest and give it as agrument an object with method and url
+      // function printResult parses respond and print a result in to html 
+      doCORSRequest({
+        method: 'GET',
+        url: weatherUrl,
+      }, function printResult(result) {
+      		var html = "";
+      		var $json = JSON.parse(result);
+      		jQuery.each($json, function(i, val) {    
+					html += "<br>" + i +" :  " + val;
+		       }); 
+       		$(".json").html(html);
+      });
+  }
 	
-});*/
+	//Declare function getLocation. This function gets the location and return an object loc with coordinates lat and lon
+	function getLocation() {
+		function success(position){
+			var loc = {lat: position.coords.latitude, lon: position.coords.longitude};
+			getWeather(loc);
+		}		
+		function error(position){
+			    alert('Error occurred. Error code: ' + position.code);
+    // error.code can be:
+    //   0: unknown error
+    //   1: permission denied
+    //   2: position unavailable (error response from locaton provider)
+    //   3: timed out
+		} 				
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(success, error);
+		}
+		else { 
+			alert('Geolocation is not supported for this Browser/OS version yet.');
+		};
+	}   
 
 
-  $(document).ready(function() {
-
-
-      $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&APPID=916819ad322d699ea2d8f94cf94c42cd", function(json) {
-
-        var html = "";
-        // Only change code below this line.
-        json.forEach(function(val) {
-var keys = Object.keys(val);
-          
-html += "<div class = 'cat'>";
-keys.forEach(function(key) {
-  
-html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
-
+ $(document).ready(function() {
+	getLocation();
 });
-html += "</div><br>";
-
-        }
-                    );
-        
-        
-        // Only change code above this line.
-
-        $(".message").html(html);
-
-      });
-
-  });
-
 
 
 
