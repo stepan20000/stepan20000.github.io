@@ -1,5 +1,6 @@
 // All comments are for not experienced peoples like me now
 
+var loc = {lat: NaN, lon: NaN};
 //Make a variable cors_api_url which now contains url 'https://cors-anywhere.herokuapp.com/'
   var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
  //Declare function doCORSRequest which takes two arguments options and printResult (printResult is a function)  
@@ -27,26 +28,29 @@
   function getWeather(loc) {
   		var key = "APPID=916819ad322d699ea2d8f94cf94c42cd"; 
   		// Use loc object to make our weather url
-		var weatherUrl = "http://api.openweathermap.org/data/2.5/weather?"+key+"&lat="+loc.lat+"&lon="+loc.lon;
+		var weatherUrl = "http://api.openweathermap.org/data/2.5/weather?units=metric&"+key+"&lat="+loc.lat+"&lon="+loc.lon;
       // Call our first function doCORSRequest and give it as agrument an object with method and url
       // function printResult parses respond and print a result in to html 
       doCORSRequest({
         method: 'GET',
         url: weatherUrl,
-      }, function printResult(result) {
-      		var html = "";
+      }, function printResult(result) {    		
       		var $json = JSON.parse(result);
+      		/*var html = "";
       		jQuery.each($json, function(i, val) {    
 					html += "<br>" + i +" :  " + val;
 		       }); 
-       		$(".json").html(html);
+       		$(".json").html(html);*/
+       		$(".location").html($json.name + ", " + $json.sys.country);
+       		$(".temperature").html("Temperature" + Math.round($json.main.temp) + " °C");
       });
   }
 	
 	//Declare function getLocation. This function gets the location and return an object loc with coordinates lat and lon
 	function getLocation() {
+		getTodayDate();
 		function success(position){
-			var loc = {lat: position.coords.latitude, lon: position.coords.longitude};
+			loc = {lat: position.coords.latitude, lon: position.coords.longitude};
 			getWeather(loc);
 		}		
 		function error(position){
@@ -58,15 +62,20 @@
     //   3: timed out
 		} 				
 		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(success, error);
+			navigator.geolocation.getCurrentPosition(success, error);									
 		}
 		else { 
 			alert('Geolocation is not supported for this Browser/OS version yet.');
 		};
-	}   
-
-
- $(document).ready(function() {
+	}
+	//Declare function getDate. This function gets the current today and return an object date with year, month,
+	//day and time  
+	function getTodayDate(){
+		var today = new Date();
+		var locale = window.navigator.userLanguage || window.navigator.language;
+		$(".date").html(today.toLocaleDateString(locale,  { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' }));
+	} 
+$(document).ready(function() {
 	getLocation();
 });
 

@@ -26,10 +26,9 @@
 </head>
 
 <body>
-<!-- 	1. Date
-		2. Time
-		3. Location
-		4. Temperature
+<!-- 	+1. Date
+		+2. Location
+		+3. Temperature
 		5. Wind direction and wind speed
 		6. Toggle from F to C
 		7. Toggle from M/H 
@@ -39,7 +38,10 @@
 		11.   	-->
 		
 		<div class="container-fluid">
-			<div class="row location">Your location</div>
+			<div class="row date"> 1 Date </div>
+			<div class="row location">2 Location</div>
+			<div class="row temperature"> 3. Temperature</div>
+			<p><button onclick="getWeather(loc)">Show my location</button></p>
 			<div class="row json"> json should be here </div>
 
 		</div>
