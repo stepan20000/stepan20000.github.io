@@ -29,22 +29,69 @@
 <!-- 	+1. Date
 		+2. Location
 		+3. Temperature
-		5. Wind direction and wind speed
-		6. Toggle from F to C
-		7. Toggle from M/H 
-		8. A brief description of the weather, one word
-		9. A small image that describes the weather
-		10. A refresh button and automatically refresh every hour
-		11.   	-->
-		
-		<div class="container-fluid">
-			<div class="row date"> 1 Date </div>
+		+5. Wind direction and wind speed
+		+6. Toggle from F to C
+		+7. Toggle from M/H 
+		+8. A brief description of the weather, one word
+		+9. A small image that describes the weather
+		----10. A refresh button and automatically refresh every hour
+		+11. Humidity
+		+12. Pressure.   	-->
+	
+	
+	<!--			<div class="row date"> 1 Date </div>
 			<div class="row location">2 Location</div>
 			<div class="row temperature"> 3. Temperature</div>
 			<p><button onclick="getWeather(loc)">Show my location</button></p>
-			<div class="row json"> json should be here </div>
-
+			<div class="row json"> json should be here </div>-->	
+	<div class="container-fluid">
+		<div class="row top-border"></div>
+		<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-3">
+					<div class="row date"></div>
+					<div class="row location"></div>
+				</div>
+				<div class="col-sm-5 plate">
+					<div class="row">
+						<div class="col-sm-7">
+							<div class="row description"></div>
+							<div class="row weather-icon"><img id="weather-icon" src="#" alt="Weather icon"></div>
+							<div class="row">
+								<img src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1484059376/Local_weather/miscellaneous.png" alt="Pressure icon">
+								<p class="pressure">Pressure</p>
+							</div>
+							<div class="row">
+								<img src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1484060251/Local_weather/humidity.png" alt="Humodity icon">
+								<p class="humidity">Humidity</p>							
+							</div>
+							<div class="row">
+								<i class="fa fa-arrow-circle-down direction fa-3x" aria-hidden="true"></i><p class="wind">Wind speed</p>
+							</div>						
+						</div>
+						<div class="col-sm-5">
+							<div class="row">
+								<div class="col-sm-12"><span class = "thermometer"></span><span class="temperature">°C</span></div>															
+							</div>
+							<div class="row">
+								<div class="col-sm-12 buttons">
+									<div class="btn-group" data-toggle="buttons">
+									  <label class="btn btn-primary active btn-xs">
+									    <input type="radio" name="options" id="metric" autocomplete="off" checked>Metric</label>
+									  <label class="btn btn-primary btn-xs">
+									    <input type="radio" name="options" id="imperial" autocomplete="off">Imperial</label>
+									</div>
+								</div>							
+							</div>		
+						</div>
+					</div>				
+				</div>
+				<div class="col-sm-1"></div>
 		</div>
+		<div class="row"></div>
+
+
+	</div>
 
 
 

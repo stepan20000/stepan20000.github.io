@@ -1,8 +1,12 @@
 // All comments are for not experienced peoples like me now
 
-var loc = {lat: NaN, lon: NaN};
+	var loc = {lat: NaN, lon: NaN};
+	var temp;
+	var wind;
+	
 //Make a variable cors_api_url which now contains url 'https://cors-anywhere.herokuapp.com/'
-  var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+	var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+  
  //Declare function doCORSRequest which takes two arguments options and printResult (printResult is a function)  
   function doCORSRequest(options, printResult) {
 	// In a function call the constructor and make new request x
@@ -36,13 +40,41 @@ var loc = {lat: NaN, lon: NaN};
         url: weatherUrl,
       }, function printResult(result) {    		
       		var $json = JSON.parse(result);
+      		temp = Math.round($json.main.temp);
+      		wind = $json.wind.speed;
       		/*var html = "";
       		jQuery.each($json, function(i, val) {    
 					html += "<br>" + i +" :  " + val;
 		       }); 
        		$(".json").html(html);*/
        		$(".location").html($json.name + ", " + $json.sys.country);
-       		$(".temperature").html("Temperature" + Math.round($json.main.temp) + " °C");
+       		$(".temperature").html(temp + " °C")
+       		if (temp >= 30) {
+       			$(".thermometer").html('<i class="fa fa-thermometer-full" aria-hidden="true"></i>  ');
+       		}
+       		else if(15 <= temp && temp <= 29){
+							$(".thermometer").html('<i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>  ');       				
+       				}
+       				else if (5 <= temp && temp <= 14){ 
+       							$(".thermometer").html('<i class="fa fa-thermometer-half" aria-hidden="true"></i>  '); 
+       						}
+       						else if (-7 <= temp && temp <= 4) {
+											$(".thermometer").html('<i class="fa fa-thermometer-quarter" aria-hidden="true"></i>  ');        								
+       								}
+       								else {
+								       	$(".thermometer").html('<i class="fa fa-thermometer-empty" aria-hidden="true"></i>  ');				
+       								};
+       		$("#weather-icon").attr({src: "http://openweathermap.org/img/w/" + $json.weather[0].icon + ".png"});
+       		$(".description").html(toTitleCase($json.weather[0].description));
+       		$(".direction").css({
+					"-ms-transform": "rotate(" + $json.wind.deg + "g)", /* IE 9 */
+    				"-webkit-transform": "rotate(" + $json.wind.deg + "deg)", /* Chrome, Safari, Opera */
+					transform: "rotate(" + $json.wind.deg + "deg)"       		
+       		});
+       		$(".wind").html(wind + " m/s");
+       		$(".pressure").html($json.main.pressure + " hPa");
+       		$(".humidity").html($json.main.humidity + " %");
+       		
       });
   }
 	
@@ -73,10 +105,21 @@ var loc = {lat: NaN, lon: NaN};
 	function getTodayDate(){
 		var today = new Date();
 		var locale = window.navigator.userLanguage || window.navigator.language;
-		$(".date").html(today.toLocaleDateString(locale,  { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' }));
+		$(".date").html(today.toLocaleDateString("en-En",  { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
 	} 
+	function toTitleCase(str){
+    return str.replace(/\w\S*/, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+	}
 $(document).ready(function() {
 	getLocation();
+		$("#imperial").on("change", function () {
+			$(".temperature").html(Math.round(temp*9/5 + 32) + " °F");
+			$(".wind").html(Math.round(wind * 3600 / 1609.344)  + " mph");
+  });
+		$("#metric").on("change", function () {
+			$(".temperature").html(temp + " °C");		
+			$(".wind").html(wind + " m/s"); 
+  });
 });
 
 

@@ -1,0 +1,8 @@
+.top-border{
+	height: 125px;
+}
+.plate{
+	border-color: #000;
+	border-style: solid;
+	border-width: 3px;
+}
