@@ -1,8 +1,39 @@
-.top-border{
+h1 {
+	display:  inline;
+	font-size: 400%;
+}
+div {
+	text-align:  center;
+}
+p {
+
+}
+.top-border {
 	height: 125px;
 }
-.plate{
+.date, .location {
+	text-align: right;
+}
+.plate {
 	border-color: #000;
 	border-style: solid;
 	border-width: 3px;
+	border-radius: 8px;
+}
+.plate-top-border {
+	height: 25px;
+}
+
+.cell {
+	 height: 30px;
+}
+#pressure-icon{
+	margin-right: 41px;
+}
+#weather-icon {
+	width: 100px;
+}
+#wind-image {
+	margin-top: 3px;
+	margin-bottom: 3px;
 }

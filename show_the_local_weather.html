@@ -45,36 +45,116 @@
 			<p><button onclick="getWeather(loc)">Show my location</button></p>
 			<div class="row json"> json should be here </div>-->	
 	<div class="container-fluid">
-		<div class="row top-border"></div>
+		<div class="row top-border"></div>	
 		<div class="row">
-				<div class="col-sm-3"></div>
-				<div class="col-sm-3">
-					<div class="row date"></div>
-					<div class="row location"></div>
-				</div>
-				<div class="col-sm-5 plate">
-					<div class="row">
-						<div class="col-sm-7">
-							<div class="row description"></div>
-							<div class="row weather-icon"><img id="weather-icon" src="#" alt="Weather icon"></div>
-							<div class="row">
-								<img src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1484059376/Local_weather/miscellaneous.png" alt="Pressure icon">
-								<p class="pressure">Pressure</p>
+			<div class="col-md-5">
+				<div class="row date">The date</div>
+				<div class="row location">The location</div>
+			</div>
+				
+			<div class="col-md-6 plate">
+				<div class="row plate-top-border"></div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-7 weather-icon">
+								<img class="img-responsive center-block" id="weather-icon" src="#" alt="Weather icon">
 							</div>
-							<div class="row">
-								<img src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1484060251/Local_weather/humidity.png" alt="Humodity icon">
-								<p class="humidity">Humidity</p>							
-							</div>
-							<div class="row">
-								<i class="fa fa-arrow-circle-down direction fa-3x" aria-hidden="true"></i><p class="wind">Wind speed</p>
-							</div>						
+							<div class="col-md-5"><br><br><p class="description">Weather description</p></div>
 						</div>
-						<div class="col-sm-5">
+						<div class="col-xs-6">
+							<img id="pressure-icon" class="img-responsive cell center-block" src="/home/stepan/Рабочий стол/barometer2.png" alt="Pressure icon">
+						</div>
+						<div class="col-xs-6">								
+							<p class="pressure">Pressure</p>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+								<img class="img-responsive cell center-block" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1484119815/Local_weather/humidity2.png" alt="Humidity icon">
+							</div>								
+							<div class="col-xs-6">									
+								<p class="humidity">Humidity</p>
+							</div>							
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+								<img id="wind-image" class="img-responsive cell center-block direction" src="/home/stepan/Рабочий стол/wind_my3.png" alt="Humidity icon">
+							</div>
+							<div class="col-xs-6">
+								<p class="wind">Wind speed</p>
+							</div>
+						</div>
+					</div>
+					<!-- эта линия разделяет плэйт пополам вертикально -->
+					<div class="col-md-6">
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+				
+				
+
+									<div class="row">
+										
+									</div>
+									<div class="row">
+										
+									</div>
+																	
+								</div>	
+								<div class="col-xs-5">
+								
+								</div>
+							</div>
+						</div>
+					
+					</div>
+					<div class="row"></div>
+						
+						
+						
+						
+<!--							<div class=" row">
+								<div class="col-xs-7">
+									<div class="row description">Weather description</div>
+									<div class="row weather-icon"><img class="img-responsive center-block" id="weather-icon" src="#" alt="Weather icon"></div>
+									<div class="row">
+										<div class="col-xs-6">
+											<img  class="img-responsive cell center-block" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1484119815/Local_weather/pressure1.png" alt="Pressure icon">
+										</div>
+										<div class="col-xs-6">								
+											<p class="pressure">Pressure</p>
+										</div>							
+									</div>
+									<div class="row">
+										<div class="col-xs-6">
+											<img class="img-responsive cell center-block" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1484119815/Local_weather/humidity2.png" alt="Humidity icon">
+										</div>								
+										<div class="col-xs-6">									
+											<p class="humidity">Humidity</p>
+										</div>							
+									</div>
+									<div class="row">
+										<div class="col-xs-6">
+											<img id="wind-image" class="img-responsive cell center-block direction" src="/home/stepan/Рабочий стол/wind_my1.png" alt="Humidity icon">
+										</div>
+										<div class="col-xs-6">
+											<p class="wind">Wind speed</p>
+										</div>
+									</div>						
+								</div>
+							</div>-->
+							
+						</div>						
+						<div class="col-xs-5">
 							<div class="row">
-								<div class="col-sm-12"><span class = "thermometer"></span><span class="temperature">°C</span></div>															
+								<div class="col-sm-12"><h1 class="thermometer"></h1><h1 class="temperature">°C</h1></div>															
 							</div>
 							<div class="row">
-								<div class="col-sm-12 buttons">
+								<div class="col-xs-12 buttons">
 									<div class="btn-group" data-toggle="buttons">
 									  <label class="btn btn-primary active btn-xs">
 									    <input type="radio" name="options" id="metric" autocomplete="off" checked>Metric</label>
@@ -86,8 +166,8 @@
 						</div>
 					</div>				
 				</div>
-				<div class="col-sm-1"></div>
-		</div>
+				<div class="col-sm-1 hidden-xs"></div>
+			</div>
 		<div class="row"></div>
 
 

@@ -48,9 +48,9 @@
 		       }); 
        		$(".json").html(html);*/
        		$(".location").html($json.name + ", " + $json.sys.country);
-       		$(".temperature").html(temp + " °C")
+       		$(".temperature").html(temp + " °C");
        		if (temp >= 30) {
-       			$(".thermometer").html('<i class="fa fa-thermometer-full" aria-hidden="true"></i>  ');
+       			$(".thermometer").html('<i class="fa fa-thermometer-full" aria-hidden="true"></i>  ' );
        		}
        		else if(15 <= temp && temp <= 29){
 							$(".thermometer").html('<i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>  ');       				
