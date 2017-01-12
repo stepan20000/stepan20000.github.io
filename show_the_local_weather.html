@@ -47,143 +47,65 @@
 	<div class="container-fluid">
 		<div class="row top-border"></div>	
 		<div class="row">
-			<div class="col-md-5">
-				<div class="row date">The date</div>
-				<div class="row location">The location</div>
+			<div class="col-md-4">
+				<div class="row date-top-border"></div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row"><h3 class="date">The date</h3></div>
+						<div class="row"><h3 class="location">The location</h3></div>
+					</div>				
+				</div>			
 			</div>
 				
-			<div class="col-md-6 plate">
+			<div class="col-md-7 plate">
+			<div class="col-md-1"></div>				
 				<div class="row plate-top-border"></div>
 				<div class="row">
 					<div class="col-md-6">
-						<div class="row">
-							<div class="col-md-7 weather-icon">
-								<img class="img-responsive center-block" id="weather-icon" src="#" alt="Weather icon">
-							</div>
-							<div class="col-md-5"><br><br><p class="description">Weather description</p></div>
-						</div>
-						<div class="col-xs-6">
-							<img id="pressure-icon" class="img-responsive cell center-block" src="/home/stepan/Рабочий стол/barometer2.png" alt="Pressure icon">
-						</div>
-						<div class="col-xs-6">								
-							<p class="pressure">Pressure</p>
-						</div>
-						<div class="row">
-							<div class="col-xs-6">
-								<img class="img-responsive cell center-block" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1484119815/Local_weather/humidity2.png" alt="Humidity icon">
-							</div>								
-							<div class="col-xs-6">									
-								<p class="humidity">Humidity</p>
-							</div>							
-						</div>
-						<div class="row">
-							<div class="col-xs-6">
-								<img id="wind-image" class="img-responsive cell center-block direction" src="/home/stepan/Рабочий стол/wind_my3.png" alt="Humidity icon">
-							</div>
-							<div class="col-xs-6">
-								<p class="wind">Wind speed</p>
-							</div>
-						</div>
+						<h2 class="description">Weather description</h2>
 					</div>
-					<!-- эта линия разделяет плэйт пополам вертикально -->
+					<div class="col-md-6"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 weather-icon">
+						<img class="img-responsive center-block" id="weather-icon" src="#" alt="Weather icon">
+					</div>
+					<div class="col-md-2"></div>
 					<div class="col-md-6">
-						
+						<br><h1 class="thermometer"></h1><h1 class="temperature">°C</h1>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-md-1 cell">
+						<img id="humidity-icon" class="img-responsive center-block" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1484119815/Local_weather/humidity2.png" alt="Humidity icon">
+					</div>
+					<div class="col-md-2">
+						<p class="humidity">Humidity</p>					
+					</div>
+					<div class="col-md-1 cell">
+						<img id="wind-icon" class="img-responsive center-block direction" src="/home/stepan/Рабочий стол/wind_my3.png" alt="Humidity icon">
+					</div>
+					<div class="col-md-2">
+						<p class="wind">Wind speed</p>
+					</div>
+					<div class="col-md-1 cell">	
+						<img id="pressure-icon" class="img-responsive center-block" src="/home/stepan/Рабочий стол/barometer2.png" alt="Pressure icon">					
+					</div>
+					<div class="col-md-2">
+						<p class="pressure">Pressure</p>				
+					</div>
+					<div class="col-md-3">
+						<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-primary active btn-xs">
+								<input type="radio" name="options" id="metric" autocomplete="off" checked>Metric</label>
+							<label class="btn btn-primary btn-xs">
+								<input type="radio" name="options" id="imperial" autocomplete="off">Imperial</label>
+						</div>
+					</div>
+				</div>
+				<div class="row plate-bottom-border"></div>
 			</div>
-			<div class="col-md-1"></div>
 		</div>
 	</div>
-				
-				
-
-									<div class="row">
-										
-									</div>
-									<div class="row">
-										
-									</div>
-																	
-								</div>	
-								<div class="col-xs-5">
-								
-								</div>
-							</div>
-						</div>
-					
-					</div>
-					<div class="row"></div>
-						
-						
-						
-						
-<!--							<div class=" row">
-								<div class="col-xs-7">
-									<div class="row description">Weather description</div>
-									<div class="row weather-icon"><img class="img-responsive center-block" id="weather-icon" src="#" alt="Weather icon"></div>
-									<div class="row">
-										<div class="col-xs-6">
-											<img  class="img-responsive cell center-block" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1484119815/Local_weather/pressure1.png" alt="Pressure icon">
-										</div>
-										<div class="col-xs-6">								
-											<p class="pressure">Pressure</p>
-										</div>							
-									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<img class="img-responsive cell center-block" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1484119815/Local_weather/humidity2.png" alt="Humidity icon">
-										</div>								
-										<div class="col-xs-6">									
-											<p class="humidity">Humidity</p>
-										</div>							
-									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<img id="wind-image" class="img-responsive cell center-block direction" src="/home/stepan/Рабочий стол/wind_my1.png" alt="Humidity icon">
-										</div>
-										<div class="col-xs-6">
-											<p class="wind">Wind speed</p>
-										</div>
-									</div>						
-								</div>
-							</div>-->
-							
-						</div>						
-						<div class="col-xs-5">
-							<div class="row">
-								<div class="col-sm-12"><h1 class="thermometer"></h1><h1 class="temperature">°C</h1></div>															
-							</div>
-							<div class="row">
-								<div class="col-xs-12 buttons">
-									<div class="btn-group" data-toggle="buttons">
-									  <label class="btn btn-primary active btn-xs">
-									    <input type="radio" name="options" id="metric" autocomplete="off" checked>Metric</label>
-									  <label class="btn btn-primary btn-xs">
-									    <input type="radio" name="options" id="imperial" autocomplete="off">Imperial</label>
-									</div>
-								</div>							
-							</div>		
-						</div>
-					</div>				
-				</div>
-				<div class="col-sm-1 hidden-xs"></div>
-			</div>
-		<div class="row"></div>
-
-
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>

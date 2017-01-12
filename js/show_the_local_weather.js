@@ -48,7 +48,7 @@
 		       }); 
        		$(".json").html(html);*/
        		$(".location").html($json.name + ", " + $json.sys.country);
-       		$(".temperature").html(temp + " °C");
+       		$(".temperature").html(temp + "°C");
        		if (temp >= 30) {
        			$(".thermometer").html('<i class="fa fa-thermometer-full" aria-hidden="true"></i>  ' );
        		}
@@ -64,7 +64,9 @@
        								else {
 								       	$(".thermometer").html('<i class="fa fa-thermometer-empty" aria-hidden="true"></i>  ');				
        								};
-       		$("#weather-icon").attr({src: "http://openweathermap.org/img/w/" + $json.weather[0].icon + ".png"});
+      // The alternative colored icons http://download.spinetix.com/content/widgets/icons/weather/
+      // http://openweathermap.org/img/w/ 
+       		$("#weather-icon").attr({src: "http://download.spinetix.com/content/widgets/icons/weather/" + $json.weather[0].icon + ".png"});
        		$(".description").html(toTitleCase($json.weather[0].description));
        		$(".direction").css({
 					"-ms-transform": "rotate(" + $json.wind.deg + "g)", /* IE 9 */
@@ -113,11 +115,11 @@
 $(document).ready(function() {
 	getLocation();
 		$("#imperial").on("change", function () {
-			$(".temperature").html(Math.round(temp*9/5 + 32) + " °F");
+			$(".temperature").html(Math.round(temp*9/5 + 32) + "°F");
 			$(".wind").html(Math.round(wind * 3600 / 1609.344)  + " mph");
   });
 		$("#metric").on("change", function () {
-			$(".temperature").html(temp + " °C");		
+			$(".temperature").html(temp + "°C");		
 			$(".wind").html(wind + " m/s"); 
   });
 });

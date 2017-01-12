@@ -1,39 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Candal|Changa+One|Faster+One|Lalezar|Paytone+One|Rubik+Mono+One|Sigmar+One');
+body {
+	color: #fff;
+	background-image: url(https://source.unsplash.com/random);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #091D27;
+}
 h1 {
 	display:  inline;
-	font-size: 400%;
-}
-div {
-	text-align:  center;
+	font-size: 500%;
+	text-shadow: #000 0 0 3px;
+	color: #fff;
 }
 p {
-
+	display: block;
+}
+.date, .location {
+	text-align: center;
+	font-size: 150%;
+	text-shadow: #000 0 0 1px;
+}
+.description {
+	font-size: 200%;
+	text-shadow: #000 0 0 2px;
+}
+.plate {
+	border-color:#fff;
+	border-style: solid;
+	border-width: 8px;
+	border-radius: 8px;
+	background-color: rgba(120, 120, 120, 0.6); 
 }
 .top-border {
 	height: 125px;
 }
-.date, .location {
-	text-align: right;
-}
-.plate {
-	border-color: #000;
-	border-style: solid;
-	border-width: 3px;
-	border-radius: 8px;
+.date-top-border {
+	height: 100px;
 }
 .plate-top-border {
-	height: 25px;
+	height: 20px;
 }
+.plate-bottom-border {
+	height: 5px;
+}
+.description {
+	margin-left: 15%;
+}
+.pressure, .humidity, .wind {
 
-.cell {
-	 height: 30px;
 }
-#pressure-icon{
-	margin-right: 41px;
+.cell {
+	
 }
 #weather-icon {
-	width: 100px;
+	margin-left: 15%;
 }
-#wind-image {
-	margin-top: 3px;
-	margin-bottom: 3px;
+#pressure-icon {
+	filter: invert(100%);
+}
+#humidity-icon{
+	filter: invert(100%);
+}
+#wind-icon {
+	filter: invert(100%);
 }
