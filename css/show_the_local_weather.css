@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Candal|Changa+One|Faster+One|Lalezar|Paytone+One|Rubik+Mono+One|Sigmar+One');
+ @import url('https://fonts.googleapis.com/css?family=Changa+One|Roboto');
 body {
 	color: #fff;
 	background-image: url(https://source.unsplash.com/random);
@@ -7,52 +7,60 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 	background-color: #091D27;
+	margin: 50px 5% 5% 5%;
 }
 h1 {
 	display:  inline;
-	font-size: 500%;
+	font-size: 400%;
 	text-shadow: #000 0 0 3px;
 	color: #fff;
+	font-family: 'Changa One', cursive;
 }
 p {
 	display: block;
+	font-family: 'Changa One', cursive;
 }
 .date, .location {
 	text-align: center;
 	font-size: 150%;
 	text-shadow: #000 0 0 1px;
+	font-family: 'Changa One', cursive;
 }
 .description {
 	font-size: 200%;
 	text-shadow: #000 0 0 2px;
+	font-family: 'Changa One', cursive;
+	
 }
 .plate {
 	border-color:#fff;
 	border-style: solid;
 	border-width: 8px;
 	border-radius: 8px;
-	background-color: rgba(120, 120, 120, 0.6); 
-}
-.top-border {
-	height: 125px;
+	background-color: rgba(120, 120, 120, 0.6);
+	padding: 2% 2% 1% 3%;
+	 
 }
 .date-top-border {
 	height: 100px;
 }
-.plate-top-border {
-	height: 20px;
-}
-.plate-bottom-border {
-	height: 5px;
-}
 .description {
 	margin-left: 15%;
 }
-.pressure, .humidity, .wind {
+.pressure, .wind {
+	margin-top: 10%;
 
 }
+.humidity {
+	margin-top: 12%;
+}
 .cell {
-	
+	padding: 5px;
+}
+.buttons{
+	float:  right;
+   font-family: 'Roboto', sans-serif;
+	text-shadow: #000 0 0 2px;
 }
 #weather-icon {
 	margin-left: 15%;
@@ -62,7 +70,9 @@ p {
 }
 #humidity-icon{
 	filter: invert(100%);
+	margin-top: -40%;
 }
 #wind-icon {
 	filter: invert(100%);
 }
+

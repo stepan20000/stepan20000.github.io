@@ -26,84 +26,61 @@
 </head>
 
 <body>
-<!-- 	+1. Date
-		+2. Location
-		+3. Temperature
-		+5. Wind direction and wind speed
-		+6. Toggle from F to C
-		+7. Toggle from M/H 
-		+8. A brief description of the weather, one word
-		+9. A small image that describes the weather
-		----10. A refresh button and automatically refresh every hour
-		+11. Humidity
-		+12. Pressure.   	-->
-	
-	
-	<!--			<div class="row date"> 1 Date </div>
-			<div class="row location">2 Location</div>
-			<div class="row temperature"> 3. Temperature</div>
-			<p><button onclick="getWeather(loc)">Show my location</button></p>
-			<div class="row json"> json should be here </div>-->	
 	<div class="container-fluid">
-		<div class="row top-border"></div>	
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-sm-5 col-xs-12">
 				<div class="row date-top-border"></div>
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-sm-12 col-xs-12">
 						<div class="row"><h3 class="date">The date</h3></div>
 						<div class="row"><h3 class="location">The location</h3></div>
 					</div>				
 				</div>			
 			</div>
-				
-			<div class="col-md-7 plate">
-			<div class="col-md-1"></div>				
-				<div class="row plate-top-border"></div>
+			<div class="col-sm-7 col-xs-12 plate">			
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-xs-6">
 						<h2 class="description">Weather description</h2>
 					</div>
-					<div class="col-md-6"></div>
+					<div class="col-xs-5">
+						<div class="btn-group buttons" data-toggle="buttons">
+							<label class="btn btn-default active btn-xs">
+								<input type="radio" name="options" id="metric" autocomplete="off" checked>Metric</label>
+							<label class="btn btn-default btn-xs">
+								<input type="radio" name="options" id="imperial" autocomplete="off">Imperial</label>
+						</div>	
+					</div>
+					<div class="col-xs-1"></div>
 				</div>
 				<div class="row">
-					<div class="col-md-4 weather-icon">
+					<div class="col-xs-4 weather-icon">
 						<img class="img-responsive center-block" id="weather-icon" src="#" alt="Weather icon">
 					</div>
-					<div class="col-md-2"></div>
-					<div class="col-md-6">
+					<div class="col-xs-2"></div>
+					<div class="col-xs-6">
 						<br><h1 class="thermometer"></h1><h1 class="temperature">°C</h1>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-1 cell">
+					<div class="col-xs-1 cell">
 						<img id="humidity-icon" class="img-responsive center-block" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1484119815/Local_weather/humidity2.png" alt="Humidity icon">
 					</div>
-					<div class="col-md-2">
+					<div class="col-xs-3">
 						<p class="humidity">Humidity</p>					
 					</div>
-					<div class="col-md-1 cell">
+					<div class="col-xs-1 cell">
 						<img id="wind-icon" class="img-responsive center-block direction" src="/home/stepan/Рабочий стол/wind_my3.png" alt="Humidity icon">
 					</div>
-					<div class="col-md-2">
+					<div class="col-xs-3">
 						<p class="wind">Wind speed</p>
 					</div>
-					<div class="col-md-1 cell">	
+					<div class="col-xs-1 cell">	
 						<img id="pressure-icon" class="img-responsive center-block" src="/home/stepan/Рабочий стол/barometer2.png" alt="Pressure icon">					
-					</div>
-					<div class="col-md-2">
+					</div>					
+					<div class="col-xs-3">
 						<p class="pressure">Pressure</p>				
 					</div>
-					<div class="col-md-3">
-						<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-primary active btn-xs">
-								<input type="radio" name="options" id="metric" autocomplete="off" checked>Metric</label>
-							<label class="btn btn-primary btn-xs">
-								<input type="radio" name="options" id="imperial" autocomplete="off">Imperial</label>
-						</div>
-					</div>
 				</div>
-				<div class="row plate-bottom-border"></div>
 			</div>
 		</div>
 	</div>

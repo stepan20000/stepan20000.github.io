@@ -31,22 +31,20 @@
   //Declare function getWeather
   function getWeather(loc) {
   		var key = "APPID=916819ad322d699ea2d8f94cf94c42cd"; 
-  		// Use loc object to make our weather url
+  		// Use loc object to make our weatherUrl
 		var weatherUrl = "http://api.openweathermap.org/data/2.5/weather?units=metric&"+key+"&lat="+loc.lat+"&lon="+loc.lon;
       // Call our first function doCORSRequest and give it as agrument an object with method and url
-      // function printResult parses respond and print a result in to html 
+      // function printResult parses respond and print a result into the html 
       doCORSRequest({
         method: 'GET',
         url: weatherUrl,
-      }, function printResult(result) {    		
+      }, printResult);
+  }
+  //Declare the function with prints the request results into the page
+  function printResult(result) {    		
       		var $json = JSON.parse(result);
       		temp = Math.round($json.main.temp);
       		wind = $json.wind.speed;
-      		/*var html = "";
-      		jQuery.each($json, function(i, val) {    
-					html += "<br>" + i +" :  " + val;
-		       }); 
-       		$(".json").html(html);*/
        		$(".location").html($json.name + ", " + $json.sys.country);
        		$(".temperature").html(temp + "°C");
        		if (temp >= 30) {
@@ -77,10 +75,10 @@
        		$(".pressure").html($json.main.pressure + " hPa");
        		$(".humidity").html($json.main.humidity + " %");
        		
-      });
-  }
+      }
 	
-	//Declare function getLocation. This function gets the location and return an object loc with coordinates lat and lon
+	//Declare function getLocation. This function gets the location save the result to the loc object and then call the getWWeather function with the
+	// loc as a parameter
 	function getLocation() {
 		getTodayDate();
 		function success(position){
@@ -92,7 +90,7 @@
     // error.code can be:
     //   0: unknown error
     //   1: permission denied
-    //   2: position unavailable (error response from locaton provider)
+    //   2: position unavailable (error response from location provider)
     //   3: timed out
 		} 				
 		if (navigator.geolocation) {
@@ -102,16 +100,22 @@
 			alert('Geolocation is not supported for this Browser/OS version yet.');
 		};
 	}
-	//Declare function getDate. This function gets the current today and return an object date with year, month,
-	//day and time  
+	//Declare function getDate. This function gets the current date and print it with the format specified
 	function getTodayDate(){
 		var today = new Date();
 		var locale = window.navigator.userLanguage || window.navigator.language;
 		$(".date").html(today.toLocaleDateString("en-En",  { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
 	} 
+	//This function makes all words in the string start with uppercase letter
 	function toTitleCase(str){
     return str.replace(/\w\S*/, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 	}
+	
+	
+	
+	
+	
+	
 $(document).ready(function() {
 	getLocation();
 		$("#imperial").on("change", function () {
