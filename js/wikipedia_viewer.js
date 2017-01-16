@@ -40,9 +40,17 @@
       });
 
   }
+  
 
 
-$(document).ready(function() {
-	getWiki();
+$( document ).ready(function(){
+	// Unbinding a particular click handler, using a reference to the function
+var foo = function(event) {
+ 
+	console.log(event);
+	console.log(event.target.value);
+}
+ 
+$( "p" ).on( "change", foo );
 
 });
