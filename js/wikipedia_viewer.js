@@ -35,7 +35,7 @@
 
   }
 	function printResult(result) {
-      		var $json = JSON.parse(result); 
+      var $json = JSON.parse(result); 
 		for(var i = 0, n = $json[1].length; i < n; i++){
 			var $newLink = $('<a href="'+$json[3][i]+'" target="_blank"><h3>'+$json[1][i]+'</h3></a>');
 			var $newText = $('<p>' + $json[2][i] +'</p>');
@@ -55,6 +55,7 @@ $( document ).ready(function(){
 	    source: function(request, response) {
 	        $.ajax({
 	            url: "http://en.wikipedia.org/w/api.php",
+	            crossOrigin: true,
 	            dataType: "jsonp",
 	            data: {
 	                'action': "opensearch",
