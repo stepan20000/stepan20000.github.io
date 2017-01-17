@@ -54,7 +54,7 @@ $( document ).ready(function(){
 	$("#text-field").autocomplete({
 	    source: function(request, response) {
 	        $.ajax({
-	            url: "http://en.wikipedia.org/w/api.php",
+	            url: "https://en.wikipedia.org/w/api.php",
 	            crossOrigin: true,
 	            dataType: "jsonp",
 	            data: {
