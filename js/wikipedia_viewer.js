@@ -24,6 +24,7 @@
   }
   //Declare function getQuote
   function getWiki(event) {
+  		 //changeStyle();
   		// Declare variable with our url with quote
 		var wikiUrl = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + event.target.value;
       // Call our first function doCORSRequest and give it as agrument an object with method and url
@@ -35,6 +36,7 @@
 
   }
 	function printResult(result) {
+		$(".cell").remove();		
       var $json = JSON.parse(result); 
 		for(var i = 0, n = $json[1].length; i < n; i++){
 			var $newLink = $('<a href="'+$json[3][i]+'" target="_blank"><h3>'+$json[1][i]+'</h3></a>');
@@ -43,16 +45,48 @@
 			$newDiv.appendTo(".result");
 			$newLink.appendTo($newDiv);
 			$newText.insertAfter($newLink);		
-		}  
+		};  
   }
   
-
+	function changeStyle(){
+		$(".window").css({
+			"margin-top": "5%"
+		});
+  }
+	function printResult2(data) {
+		$(".cell").remove();
+		for(var i = 0, n = data[1].length; i < n; i++){
+			var $newLink = $('<a href="'+data[3][i]+'" target="_blank"><h3>'+data[1][i]+'</h3></a>');
+			var $newText = $('<p>' + data[2][i] +'</p>');
+			var $newDiv = $('<div class="cell"></div>');
+			$newDiv.appendTo(".result");
+			$newLink.appendTo($newDiv);
+			$newText.insertAfter($newLink);
+  		};
+	}
 
 $( document ).ready(function(){
 	
-	$( "p" ).on( "change", getWiki );
+	
+	$( "p" ).on( "keyup", function (event) {
+			if (event.target.value === "") {
+				$(".window").css({
+					"margin-top": "30%",
+					"text-align": "center"				
+				});
+				$(".cell").remove();			
+			}
+			else {
+				$(".window").css({
+					"margin-top": "0%", 				
+				});
+				$(".input",".wikipedia").css({
+					"float": "left"
+					});		
+			};				
+		});
 	$("#text-field").autocomplete({
-	    source: function(request, response) {
+	    source: function(request, response) {;
 	        $.ajax({
 	            url: "https://en.wikipedia.org/w/api.php",
 	            crossOrigin: true,
@@ -62,9 +96,11 @@ $( document ).ready(function(){
 	                'format': "json",
 	                'search': request.term
 	            },
-	            success: function(data) {
+	            success: /*function(data) {
+	            	console.log(data);
 	                response(data[1]);
-	            }
+	            }*/
+	            printResult2
 	        });
 	    }
 	});

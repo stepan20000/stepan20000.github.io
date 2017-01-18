@@ -1,3 +1,20 @@
+body {
+	padding: 2% 5% 5% 5%;
+}
+a {
+	color: black;
+	margin: 2px;
+}
+.window {
+	margin-top: 20%;
+	text-align: center;
+}
+.wikipedia {
+
+}
+.input {
+	
+}
 #text-field{
 	width: 25;
 }
