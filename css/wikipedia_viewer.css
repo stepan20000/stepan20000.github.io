@@ -1,20 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans|Francois+One|Fredoka+One');
 body {
 	padding: 2% 5% 5% 5%;
+	font-family: 'Droid Sans', sans-serif;
+	background-color: #eef;
+}
+h2 {
+	font-family: 'Fredoka One', cursive;
+	text-shadow: #fff 0 0 5px;
+}
+h3 {
+	font-family: 'Francois One', sans-serif;
 }
 a {
-	color: black;
-	margin: 2px;
+	color: #333;
+}
+.logo {
+	margin: 2%;
+	transition-property: float;
+	transition-duration: 0.5s;
 }
 .window {
-	margin-top: 20%;
+	transition-property: margin-top;
+  	transition-duration: 0.5s;
+	margin-top: 10%; /*margin-top: 0%;*/
 	text-align: center;
 }
-.wikipedia {
-
-}
 .input {
-	
+	transition-property: float;
+	transition-property: margin-left;
+  	transition-duration: 0.5s;
+	/*float: left;
+	margin-left: 40px;*/
 }
-#text-field{
+.random-button {
+	margin-top: -2px;		
+}
+.result {
+	clear: left;
+}
+#logo-img {
+	transition-property: max-width;
+  	transition-duration: 0.5s;
+	max-width: 170px; /*max-width: 110px;*/		
+}
+#text-field {
 	width: 25;
 }

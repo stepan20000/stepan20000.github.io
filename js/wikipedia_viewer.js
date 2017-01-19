@@ -70,19 +70,17 @@ $( document ).ready(function(){
 	
 	$( "p" ).on( "keyup", function (event) {
 			if (event.target.value === "") {
-				$(".window").css({
-					"margin-top": "30%",
-					"text-align": "center"				
-				});
-				$(".cell").remove();			
+				$(".cell").remove();
+				$(".window").css({"margin-top" : "10%"});
+				$(".logo").css({"float" : "none"});
+				$(".input").css({"float" : "none", "margin-left" : "px"});
+				$("#logo-img").css({"max-width" : "170px"});			
 			}
 			else {
-				$(".window").css({
-					"margin-top": "0%", 				
-				});
-				$(".input",".wikipedia").css({
-					"float": "left"
-					});		
+				$(".window").css({"margin-top": "0%"});
+				$(".logo").css({"float" : "left"});
+				$(".input").css({"float" : "left", "margin-left" : "40px"});
+				$("#logo-img").css({"max-width" : "110px"});						
 			};				
 		});
 	$("#text-field").autocomplete({
