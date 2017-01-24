@@ -1,5 +1,14 @@
+.container-fluid {
+	text-align: center;
+}
+.online {
+	background-color: green;
+}
+.offline {
+	background-color: red;
+}
 .logo {
-	width: 100%;
+
 }
 .display_name {
 

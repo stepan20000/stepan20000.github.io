@@ -9,42 +9,46 @@ $( document ).ready(function(){
 		$(".result").append('<div class="row"></div>');
 		$.getJSON(workUrl + '/channels/' + streams[rowNum] + '?callback=?', function(data) {
 			if(data.logo){
-				$(".row").eq(rowNum).append('<div class="col-xs-2"><img class="logo" src="' + data.logo + '"></div>');
+				$(".row").eq(rowNum + 1).append('<div class="col-xs-2"><img class="logo img-circle img-responsive" src="' + data.logo + '"></div>');
 			}
 			else {
-				$(".row").eq(rowNum).append('<div class="col-xs-2"><img class="logo" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1485194092/tvitchtv/blanck_logo1.png"></div>');	
+				$(".row").eq(rowNum + 1).append('<div class="col-xs-2"><img class="logo img-circle img-responsive" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1485194092/tvitchtv/blanck_logo1.png"></div>');	
 			};
 			if (data.display_name) {
-				$(".row").eq(rowNum).append('<div class="col-xs-2">' + data.display_name + '</div>');
+				$(".row").eq(rowNum + 1).append('<div class="col-xs-2">' + data.display_name + '</div>');
 			}
 			else{
-				$(".row").eq(rowNum).append('<div class="col-xs-2">' + streams[rowNum] + '</div>');
+				$(".row").eq(rowNum + 1).append('<div class="col-xs-2">' + streams[rowNum] + '</div>');
 			}
 			if (data.error) {
 	// appending the status
-				$(".row").eq(rowNum).append('<div class="col-xs-5">' + data.status + '. ' + data.message + '</div>');
-				$(".row").eq(rowNum).append('<div class="col-xs-3">' + data.error + '</div>');
+				$(".row").eq(rowNum + 1).append('<div class="col-xs-5">' + data.status + '. ' + data.message + '</div>');
+				$(".row").eq(rowNum + 1).append('<div class="col-xs-3">' + data.error + '</div>');
 			}
 			else {
 				if(jQuery.isEmptyObject(data.status)){
-					$(".row").eq(rowNum).append('<div class="col-xs-5"></div>');
+					$(".row").eq(rowNum + 1).append('<div class="col-xs-5"></div>');
 					$.getJSON(workUrl + '/streams/' + streams[rowNum] + '?callback=?', function(data) {
-						if (jQuery.isEmptyObject(data.stream)) {	 				
-	  						$(".row").eq(rowNum).append('<div class="col-xs-3">Offline</div>');
+						if (jQuery.isEmptyObject(data.stream)) {	
+							$(".row").eq(rowNum  + 1).addClass("offline"); 				
+	  						$(".row").eq(rowNum  + 1).append('<div class="col-xs-3">Offline</div>');
 						}
 						else {
-							$(".row").eq(rowNum).append('<div class="col-xs-3">Online</div>');
+							$(".row").eq(rowNum  + 1).addClass("online");
+							$(".row").eq(rowNum + 1).append('<div class="col-xs-3">Online</div>');
 						};
 					});	
 				}
 				else {
-					$(".row").eq(rowNum).append('<div class="col-xs-5">' + data.status + '</div>');
+					$(".row").eq(rowNum + 1).append('<div class="col-xs-5">' + data.status + '</div>');
 					$.getJSON(workUrl + '/streams/' + streams[rowNum] + '?callback=?', function(data) {
-						if (jQuery.isEmptyObject(data.stream)) {	 				
-	  						$(".row").eq(rowNum).append('<div class="col-xs-3">Offline</div>');
+						if (jQuery.isEmptyObject(data.stream)) {	 
+							$(".row").eq(rowNum  + 1).addClass("offline");				
+	  						$(".row").eq(rowNum + 1).append('<div class="col-xs-3">Offline</div>');
 						}
 						else {
-							$(".row").eq(rowNum).append('<div class="col-xs-3">Online</div>');
+							$(".row").eq(rowNum  + 1).addClass("online");
+							$(".row").eq(rowNum + 1).append('<div class="col-xs-3">Online</div>');
 						};
 					});	
 				};
