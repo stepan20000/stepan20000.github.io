@@ -3,75 +3,91 @@ var streams = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck",
 	"comster404"];
 var streams1 = ["ESL_SC2", "freecodecamp"];
 var workUrl = 'https://wind-bow.gomix.me/twitch-api';
-$( document ).ready(function(){
-	for(var i = 0, n = streams.length; i < n; i++) {
+
+// This functon receive the list of streams and write the statuses and info to the page
+function printResult(streams) {
+		for(var i = 0, n = streams.length; i < n; i++) { 
 		let rowNum = i;
-		$(".result").append('<div class="row"></div>');
+		let rowId = "row" + i;
+		$(".result").append('<div id="' + rowId + '" class="row"></div>');
 		$.getJSON(workUrl + '/channels/' + streams[rowNum] + '?callback=?', function(data) {
+			// write logo
 			if(data.logo){
-				$(".row").eq(rowNum + 1).append('<div class="col-xs-2"><img class="logo img-circle img-responsive" src="' + data.logo + '"></div>');
+				$("#" + rowId).append('<div class="col-xs-2 logo vcenter"><img class="img-circle img-responsive" src="' + data.logo + '"></div>');
 			}
 			else {
-				$(".row").eq(rowNum + 1).append('<div class="col-xs-2"><img class="logo img-circle img-responsive" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1485194092/tvitchtv/blanck_logo1.png"></div>');	
+				$("#" + rowId).append('<div class="col-xs-2 logo vcenter"><img class="img-circle img-responsive" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1485194092/tvitchtv/blanck_logo1.png"></div>');	
 			};
+			// write channel name
 			if (data.display_name) {
-				$(".row").eq(rowNum + 1).append('<div class="col-xs-2">' + data.display_name + '</div>');
+				$("#" + rowId).append('<div class="col-xs-7 vcenter info"><h4>' + data.display_name + '</h4></div>');
 			}
 			else{
-				$(".row").eq(rowNum + 1).append('<div class="col-xs-2">' + streams[rowNum] + '</div>');
-			}
+				$("#" + rowId).append('<div class="col-xs-7 vcenter info"><h4>' + streams[rowNum] + '</h4></div>');
+			};
+			// appending the status for the non existiong channels
 			if (data.error) {
-	// appending the status
-				$(".row").eq(rowNum + 1).append('<div class="col-xs-5">' + data.status + '. ' + data.message + '</div>');
-				$(".row").eq(rowNum + 1).append('<div class="col-xs-3">' + data.error + '</div>');
+				$("#" + rowId).addClass("not-exist");
+				$("#" + rowId + " .info").append('<p class="status">' + data.status + '. ' + data.message + '</p');
+				$("#" + rowId).append('<div class="col-xs-3 vcenter">' + data.error + '</div>');
 			}
+			// if channel is exist, i.e. data.error doesn't exist
 			else {
+				//if channel doesn't have status info
 				if(jQuery.isEmptyObject(data.status)){
-					$(".row").eq(rowNum + 1).append('<div class="col-xs-5"></div>');
+					//write an empty status paragraph and make next request
+					$("#" + rowId + " .info").append('<p class="status"></p>');
 					$.getJSON(workUrl + '/streams/' + streams[rowNum] + '?callback=?', function(data) {
 						if (jQuery.isEmptyObject(data.stream)) {	
-							$(".row").eq(rowNum  + 1).addClass("offline"); 				
-	  						$(".row").eq(rowNum  + 1).append('<div class="col-xs-3">Offline</div>');
+							$("#" + rowId).addClass("offline"); 				
+	  						$("#" + rowId).append('<div class="col-xs-3 vcenter">Offline</div>');
 						}
 						else {
-							$(".row").eq(rowNum  + 1).addClass("online");
-							$(".row").eq(rowNum + 1).append('<div class="col-xs-3">Online</div>');
+							$("#" + rowId).addClass("online");
+							$("#" + rowId).append('<div class="col-xs-3 vcenter">Online</div>');
 						};
 					});	
 				}
+				// if channel has status info - write this status and make next request
 				else {
-					$(".row").eq(rowNum + 1).append('<div class="col-xs-5">' + data.status + '</div>');
+					$("#" + rowId + " .info").append('<p class="status">' + data.status + '</p>');
+					console.log($("#" + rowId + " .info").html());
 					$.getJSON(workUrl + '/streams/' + streams[rowNum] + '?callback=?', function(data) {
 						if (jQuery.isEmptyObject(data.stream)) {	 
-							$(".row").eq(rowNum  + 1).addClass("offline");				
-	  						$(".row").eq(rowNum + 1).append('<div class="col-xs-3">Offline</div>');
+							$("#" + rowId).addClass("offline");				
+	  						$("#" + rowId).append('<div class="col-xs-3 vcenter">Offline</div>');
 						}
 						else {
-							$(".row").eq(rowNum  + 1).addClass("online");
-							$(".row").eq(rowNum + 1).append('<div class="col-xs-3">Online</div>');
+							$("#" + rowId).addClass("online");
+							$("#" + rowId).append('<div class="col-xs-3 vcenter">Online</div>');
 						};
 					});	
 				};
 			};	
 		});
-	}
-	/*	for(var i = 0, n = streams.length; i < n; i++) {
-		$.getJSON('https://wind-bow.gomix.me/twitch-api/streams/' + streams[i] + '?callback=?', function(data) {
-	  		response[i] = data;
-		});		
-	}*/
-	
+	}	
+}
 
-/*		$.getJSON('https://wind-bow.gomix.me/twitch-api/channels/ESL_SC2?callback=?', function(data) {
-	  console.log(data);
+$( document ).ready(function(){
+	printResult(streams);
+
+$('input:radio[name="display-options"]').change(
+	function(){
+		if($(this).is(':checked') && $(this).val() == "online"){
+			$(".offline").hide("slow");
+			$(".not-exist").hide("slow");
+			$(".online").show("slow");
+			
+		}
+		else if ($(this).is(':checked') && $(this).val() == "offline"){
+			$(".online").hide("slow");
+			$(".not-exist").hide("slow");
+			$(".offline").show("slow");
+		} 
+		else {
+			$(".not-exist").show("slow");
+			$(".online").show("slow");
+			$(".offline").show("slow");
+		}
 	});
-		$.getJSON('https://wind-bow.gomix.me/twitch-api/channels/freecodecamp?callback=?', function(data) {
-	  console.log(data);
-	});
-			$.getJSON('https://wind-bow.gomix.me/twitch-api/streams/brunofin?callback=?', function(data) {
-	  console.log(data);
-	}); 
-		$.getJSON('https://wind-bow.gomix.me/twitch-api/channels/comster404?callback=?', function(data) {
-	  console.log(data);
-	});*/
 });
