@@ -51,7 +51,6 @@ function printResult(streams) {
 				// if channel has status info - write this status and make next request
 				else {
 					$("#" + rowId + " .info").append('<p class="status">' + data.status + '</p>');
-					console.log($("#" + rowId + " .info").html());
 					$.getJSON(workUrl + '/streams/' + streams[rowNum] + '?callback=?', function(data) {
 						if (jQuery.isEmptyObject(data.stream)) {	 
 							$("#" + rowId).addClass("offline");				
@@ -67,11 +66,8 @@ function printResult(streams) {
 		});
 	}	
 }
-
-$( document ).ready(function(){
-	printResult(streams);
-
-$('input:radio[name="display-options"]').change(
+function filterResult() {
+	$('input:radio[name="display-options"]').change(
 	function(){
 		if($(this).is(':checked') && $(this).val() == "online"){
 			$(".offline").hide("slow");
@@ -90,4 +86,36 @@ $('input:radio[name="display-options"]').change(
 			$(".offline").show("slow");
 		}
 	});
+	
+}
+
+//Client ID: 4cialbjopbvvuhiguy71sb9cfm9bq4
+$( document ).ready(function(){
+	printResult(streams);
+	filterResult();
+	var url = "https://wind-bow.gomix.me/twitch-api/search/streams?query=";
+	$("#text-field").autocomplete({
+   	source: function(request, response) {
+      	$.ajax({
+        		type: 'GET',
+            url: "https://api.twitch.tv/kraken/search/channels/",
+            headers: {
+            	'Accept': 'application/vnd.twitchtv.v5+json',
+				   'Client-ID': '4cialbjopbvvuhiguy71sb9cfm9bq4' 								
+ 				},
+ 				data: {
+ 					'query': request.term
+ 				},
+            crossOrigin: true,
+            dataType: "json",
+          	success: function (data) {
+          		var autocompleteList = [];
+          		for(var i = 0, n = data.channels.length; i < n; i++){
+						autocompleteList[i] = data.channels[i].display_name; 	          		
+          		}
+          		response(autocompleteList);
+          	}
+			});
+		}
+	})
 });
