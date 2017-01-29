@@ -42,11 +42,11 @@ function fillRow(rowId, userName){
 				$.getJSON(workUrl + '/streams/' + userName + '?callback=?', function(data) {
 					if (jQuery.isEmptyObject(data.stream)) {	
 						$("#" + rowId).addClass("offline"); 				
-	  						$("#" + rowId).append('<div class="col-xs-3 vcenter">Offline</div>');
+	  						$("#" + rowId).append('<div class="col-xs-3 vcenter"><img class="online-mark" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1485635805/tvitchtv/offline-mark.png" alt="Offline"></div>');
 					}
 					else {
 						$("#" + rowId).addClass("online");
-						$("#" + rowId).append('<div class="col-xs-3 vcenter">Online</div>');
+						$("#" + rowId).append('<div class="col-xs-3 vcenter"><img class="online-mark" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1485635805/tvitchtv/online-mark.png" alt="Online"></div>');
 					};
 				});	
 			}
@@ -56,11 +56,11 @@ function fillRow(rowId, userName){
 				$.getJSON(workUrl + '/streams/' + userName + '?callback=?', function(data) {
 					if (jQuery.isEmptyObject(data.stream)) {	 
 						$("#" + rowId).addClass("offline");				
-	  						$("#" + rowId).append('<div class="col-xs-3 vcenter">Offline</div>');
+	  						$("#" + rowId).append('<div class="col-xs-3 vcenter"><img class="online-mark" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1485635805/tvitchtv/offline-mark.png" alt="Offline"></div>');
 					}
 					else {
 						$("#" + rowId).addClass("online");
-						$("#" + rowId).append('<div class="col-xs-3 vcenter">Online</div>');
+						$("#" + rowId).append('<div class="col-xs-3 vcenter"><img class="online-mark" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1485635805/tvitchtv/online-mark.png" alt="Online"></div>');
 					};
 				});	
 			};
@@ -81,8 +81,9 @@ function printResult() {
 
 // This function makes the filter radiobuttons filter the results
 function filterResult() {
-	$('input:radio[name="display-options"]').change(
+	$('input:radio[name="display-options"]').on('change',  						
 	function(){
+		console.log("take event");
 		if($(this).is(':checked') && $(this).val() == "online"){
 			$(".offline").hide("slow");
 			$(".not-exist").hide("slow");

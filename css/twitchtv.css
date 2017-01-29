@@ -28,7 +28,9 @@ img {
 }
 .result {
 	max-width: 600px;
-	background-color: #ccc;
+}
+.row {
+	background-color: #eee;
 }
 .vcenter {
 	text-align: center;
@@ -44,14 +46,20 @@ img {
 .container-fluid {
 	text-align: center;
 }
+.online-mark {
+	width: 30px;
+	border: none;
+}
 .online {
-	background-color: green;
 }
 .offline {
-	background-color: red;
+
 }
 .logo {
 	padding: 5px;
+}
+.btn-success {
+	
 }
 .display_name {
 
@@ -59,3 +67,32 @@ img {
 #text-field {
 
 }
+		
+
+
+
+
+
+
+/*
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-success {
+    background: #890B9F;
+    color: #ffffff;
+}
+ 
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success {
+    background: #33a6cc;
+}
+ 
+.btn-success:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+*/
+
+
+
