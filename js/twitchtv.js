@@ -81,9 +81,12 @@ function printResult() {
 
 // This function makes the filter radiobuttons filter the results
 function filterResult() {
-	$('input:radio[name="display-options"]').on('change',  						
-	function(){
+	//$('input:radio[name="display-options"]').on('change', 
+	$('input[type=radio]').hide(); 
+	$('input').on('click',  						
+	function(event){
 		console.log("take event");
+		console.log($('input:radio:checked').val());
 		if($(this).is(':checked') && $(this).val() == "online"){
 			$(".offline").hide("slow");
 			$(".not-exist").hide("slow");

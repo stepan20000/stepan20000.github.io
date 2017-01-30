@@ -7,6 +7,10 @@ img {
 	border-width: 3px;
 	border-style: solid;
 }
+input {
+	padding: 0;
+	margin: -50;
+}
 .navbar-brand {
 	padding-top: 5px;
 }
@@ -65,6 +69,9 @@ img {
 
 }
 #text-field {
+
+}
+#all {
 
 }
 		
