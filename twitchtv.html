@@ -34,27 +34,27 @@ Client ID: 4cialbjopbvvuhiguy71sb9cfm9bq4
  -->
 
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div cass="navbar-header vcenter">
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="col-xs-3">
+			<div cass="navbar-header">
 				<a class="navbar-brand" href="https://www.twitch.tv" target="blank">
 					<img class="twitch img-responsive2" alt ="Twitch" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1485436286/tvitchtv/twitchtv.png"></a>
 			</div>
-		
-			<div class="collapse navbar-collapse vcenter">
-				<div class="btn-group" role="group">
+		</div>	
+			<div class="col-xs-5 nav-vcenter">
+				<input type="text" size="25" maxlength="25" id="text-field" placeholder="Search ... ">
+			</div>
+			<div class="col-xs-4 nav-vcenter">
+				<div class="btn-group" data-toggle="buttons">
 					<label id="all" class="btn  btn-primary active btn-sm">
-						<input type="radio" name="display-options" value="all" autocomplete="off" checked>All</label>
-					<label class="btn btn-success btn-sm">
-						<input type="radio" name="display-options" value="online" autocomplete="off">Online</label>
-					<label class="btn btn-danger btn-sm">
-						<input type="radio" name="display-options" value="offline" autocomplete="off">Offline</label>
+						<input type="radio" name="display-options" checked>All</label>
+					<label class="btn btn-online  btn-sm" id="online">
+						<input type="radio" name="display-options">Online</label>
+					<label class="btn btn-default btn-sm" id="offline">
+						<input type="radio" name="display-options">Offline</label>
 				</div>
 			</div>
-			<div class="col-xs-5">
-				<input type="text" class="form-control" size="30" maxlength="25" id="text-field" placeholder="Search ... ">
-			</div>		
-		</div>
+			</div>
 	</nav>
 	<div class="container result">
 

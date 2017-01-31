@@ -81,26 +81,25 @@ function printResult() {
 
 // This function makes the filter radiobuttons filter the results
 function filterResult() {
-	//$('input:radio[name="display-options"]').on('change', 
-	$('input[type=radio]').hide(); 
-	$('input').on('click',  						
+	//$('input:radio[name="display-options"]').on('change',  
+	$('.btn-group').on('click',  						
 	function(event){
-		console.log("take event");
-		console.log($('input:radio:checked').val());
-		if($(this).is(':checked') && $(this).val() == "online"){
+		console.dir(event);
+		if (event.target.id === "all") {
+			$(".offline").show("slow");
+			$(".not-exist").show("slow");
+			$(".online").show("slow");
+			
+		}
+		else if (event.target.id === "online") {
 			$(".offline").hide("slow");
 			$(".not-exist").hide("slow");
 			$(".online").show("slow");
 			
 		}
-		else if ($(this).is(':checked') && $(this).val() == "offline"){
-			$(".online").hide("slow");
-			$(".not-exist").hide("slow");
-			$(".offline").show("slow");
-		} 
 		else {
-			$(".not-exist").show("slow");
-			$(".online").show("slow");
+			$(".not-exist").hide("slow");
+			$(".online").hide("slow");
 			$(".offline").show("slow");
 		}
 	});	
