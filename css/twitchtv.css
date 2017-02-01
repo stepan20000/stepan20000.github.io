@@ -1,6 +1,22 @@
+ @import url('https://fonts.googleapis.com/css?family=Farsan|Ramaraja');
 body {
-	padding: 25px 10px 0px 10px;
+	padding: 15px 10px 0px 10px;
 	background-color: #6441a5;
+}
+h3 {
+	font-family: 'Ramaraja', serif;
+}
+p {
+   font-family: 'Farsan', cursive;
+   font-size: 15px;
+}
+a {
+    color: #6441a5;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: #428BCA;
+    text-decoration: underline;
 }
 img {
 	border-color: #ddd;
@@ -8,7 +24,6 @@ img {
 	border-style: solid;
 }
 input {
-	padding: 0;
 	margin: -50;
 }
 .navbar-brand {
@@ -49,6 +64,7 @@ input {
 	border: 2px solid #111;
 	border-radius: 7px;
 	margin: 1%;
+	text-align: center;
 }	
 .container-fluid {
 	text-align: center;
@@ -63,43 +79,17 @@ input {
 #text-field {
 	float: left;
 }	
-
-
-
-
-
-
-
-.btn:focus, .btn:active:focus, .btn.active:focus {
-    outline: 0 none;
-}
- 
-.btn-online {
-    background:  #6441a5;
-    color: #fff;
-}
- 
-.btn-online:hover, .btn-offline:focus {
+.btn-whatever:hover, .btn-whatever:focus {
     background: #890B9F;
     color: #fff;
 }
-.btn-online.active {
+.btn-whatever.active, .btn-whatever:active {
 	background: #890B9F;
 	color: #fff;
 }
-
-.btn-offline {
-    background:  #646464;
+.btn-whatever {
+    background: #6441a5;
     color: #fff;
-}
- 
-.btn-offline:hover, .btn-offline:focus {
-    background: #890B9F;
-    color: #fff;
-}
-.btn-online.offline {
-	background: #890B9F;
-	color: #fff;
 }
 
 

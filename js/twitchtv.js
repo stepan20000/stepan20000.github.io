@@ -8,26 +8,30 @@ for(let i = 0, n = userNames.length; i < n; i++){
 	userNames[i] = userNames[i].toLowerCase();
 };
 
-// This function takes the id of the appropriate row and the username and then
-// fill this row with the information which correspond this username
+// This function takes an id of the appropriate row and the username and then
+// fill this row with the information which corresponds to this username
 function fillRow(rowId, userName){
 	$.getJSON(workUrl + '/channels/' + userName + '?callback=?', function(data) {
 		// write logo
 		if(data.logo){
-			$("#" + rowId).append('<div class="col-xs-2 logo vcenter"><img class="img-circle img-responsive" src="' + data.logo + '"></div>');
+			$("#" + rowId).append('<div class="col-xs-2 logo vcenter"><a href="https://www.twitch.tv/' + userName + '" target="_blank"><img class="img-circle img-responsive" src="' 
+				+ data.logo + '"></a></div>');
 		}
 		else {
-			$("#" + rowId).append('<div class="col-xs-2 logo vcenter"><img class="img-circle img-responsive" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1485194092/tvitchtv/blanck_logo1.png"></div>');	
+			$("#" + rowId).append('<div class="col-xs-2 logo vcenter"><a href="https://www.twitch.tv/'
+				+ userName + '" target="_blank"><img class="img-circle img-responsive" src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1485194092/tvitchtv/blanck_logo1.png"></a></div>');	
 		};
 		// write obtained channel name
 		if (data.display_name) {
-			$("#" + rowId).append('<div class="col-xs-7 vcenter info"><h4>' + data.display_name + '</h4></div>');
+			$("#" + rowId).append('<div class="col-xs-7 vcenter info"><a href="https://www.twitch.tv/' + userName + '" target="_blank"><h3>' 
+				+ data.display_name + '</h3></a></div>');
 		}
-		// if not exist username from userNames array
+		// if not exist write username from userNames array
 		else{
-			$("#" + rowId).append('<div class="col-xs-7 vcenter info"><h4>' + userName + '</h4></div>');
+			$("#" + rowId).append('<div class="col-xs-7 vcenter info"><a href="https://www.twitch.tv/' + userName + '" target="_blank"><h3>' 
+			+ userName + '</h3></a></div>');
 		};
-		// appending the status for the non existiong channels
+		// appending the status for the non existiong channels, and instead of the online/offline mark write the error info
 		if (data.error) {
 			$("#" + rowId).addClass("not-exist");
 			$("#" + rowId + " .info").append('<p class="status">' + data.status + '. ' + data.message + '</p');
@@ -79,12 +83,11 @@ function printResult() {
 		
 }
 
-// This function makes the filter radiobuttons filter the results
+// This function makes the filter radio buttons filter the results
 function filterResult() {
-	//$('input:radio[name="display-options"]').on('change',  
+	//Add one event listener to the button group and then define what button was clicked depends on the event.target.id
 	$('.btn-group').on('click',  						
 	function(event){
-		console.dir(event);
 		if (event.target.id === "all") {
 			$(".offline").show("slow");
 			$(".not-exist").show("slow");
@@ -107,6 +110,7 @@ function filterResult() {
 
 // This function print the result to the top of the page according to the user's input
 function addResult(event) {
+	//Check if printed userName is exist in the our username Array if not add it to the array and display on the page
 	if (userNames.indexOf($("#text-field").val().toLowerCase()) === -1) {		
 		let rowNum =userNames.length; 
 		let rowId = 'row' + rowNum; 
@@ -114,6 +118,7 @@ function addResult(event) {
 		$(".result").prepend('<div id="' + rowId + '" class="row"></div>');
 		fillRow(rowId, userNames[rowNum]);		
 	}
+	// else make alert message
 	else {
 		alert('Take a closer look please, the channel "' + $("#text-field").val() + '" is already displayed in a list' );
 	};
