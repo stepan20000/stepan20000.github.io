@@ -65,9 +65,6 @@ input {
 	border-radius: 7px;
 	margin: 1%;
 	text-align: center;
-}	
-.container-fluid {
-	text-align: center;
 }
 .online-mark {
 	width: 30px;
@@ -91,5 +88,30 @@ input {
     background: #6441a5;
     color: #fff;
 }
+.footer{
+	width: 100%;
+   left: 0; 
+  	right: 0;
+  	bottom: 10px;
+  	width: 100%;
+  	height: 15px;
+  	color: #bbb;
+  	padding-right: 5%;
+}
+.footer p{
+	text-align: right;
+	font-family: 'Farsan', cursive;
+	text-indent: 0em;
+	font-size: 12px;
+}
+.footer a {
+ 		color: #ccc;
+ 		text-decoration: none;	
+}
+.footer a:hover, .footer a:focus {
+ 		color: #428BCA;
+ 		text-decoration: underline;
+}
+
 
 

@@ -4,11 +4,10 @@
 	<meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   
    <title>Tribute Page</title>
    
    <link rel="icon" href="http://res.cloudinary.com/dtnyso8nn/image/upload/v1483688154/portfolio/favicon-image.jpg">
-	<link href="https://fonts.googleapis.com/css?family=Tillana" rel="stylesheet" type="text/css">
 			<!--Bootstrap-->
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -18,6 +17,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
 	<script src="https://use.fontawesome.com/e9bbf5de1c.js"></script> 
 	<style>
+		 @import url('https://fonts.googleapis.com/css?family=Farsan|Tillana');
 		body {
 			background-color: #555; color: #222; font-family: Tillana;
 		}
@@ -45,12 +45,13 @@
 		}
 		img {
 			width: 100%;
-			border-radius: 30px; margin-top: 11%; border-color: #888; border-width: 4px; 
+			border-radius: 30px; border-color: #888; border-width: 4px; 
 			border-style: solid;
+			margin-top: 8%;
 		}
 		.footer{
+			width: 100%;
 		   left: 0; 
-			font-size: 10px;
 		  	right: 0;
 		  	bottom: 10px;
 		  	width: 100%;
@@ -60,8 +61,19 @@
 		}
 		.footer p{
 			text-align: right;
-			font-family: sans-serif;
+			font-family: 'Farsan', cursive;
+			text-indent: 0em;
+			font-size: 12px;
 		}
+		.footer a {
+    		color: #ccc;
+    		text-decoration: none;	
+		}
+		.footer a:hover, .footer a:focus {
+    		color: #428BCA;
+    		text-decoration: underline;
+		}
+
 	</style>
 </head>
 <body>
@@ -72,13 +84,12 @@
     <div class="row">
       <h4>
         Mahatma Gandhi was one of the leaders and ideologist of the national liberation movement in India. His philosophy of non-violence Satyagraha had an impact on the national and international movement of supporters of peaceful change.
-      </h4>
-      
+      </h4>   
     </div>
     <div class="row"></div>
-    <div class="row">
+    <div class="row display-table">
       <div class="col-lg-4 col-md-4 col-sm-5">
-       <img src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1483696356/tribute_page/Ghandi.jpg" alt="Mahatma Gandhi photo">         
+      	<img src="http://res.cloudinary.com/dtnyso8nn/image/upload/v1483696356/tribute_page/Ghandi.jpg" alt="Mahatma Gandhi photo">         
       </div>
       <div class="col-lg-8 col-md-8 col-sm-7 text">
         <p>
@@ -116,5 +127,11 @@
   <br>
   <p>You can find more about Mahatma Gandhi in <a href="https://en.wikipedia.org/wiki/Mahatma_Gandhi" target="_blank">Wikipedia</a></p>  
   </div>
-  <div class="footer"><p><i class="fa fa-copyright">&nbsp</i>Made by Stepan Yefimov 2017, Kiev, Ukraine</p></div>
+  <div class="footer">
+  		<p><a href="https://stepan20000.github.io/portfolio.html" target="_blank">
+  			<i class="fa fa-copyright">&nbsp</i>Made with &nbsp <i class="fa fa-heart-o" aria-hidden="true"></i> 
+			&nbsp Stepan Yefimov 2017, Kiev, Ukraine
+		</a></p>
+	</div>
 </body>
+

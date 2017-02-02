@@ -1,7 +1,7 @@
 //Client ID: 4cialbjopbvvuhiguy71sb9cfm9bq4
 // This array is a list with usernames
 var userNames = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "brunofin",
-	"comster404", "blablablabakaffrfkwfsrf"];
+	"comster404"];
 var workUrl = 'https://wind-bow.gomix.me/twitch-api';
 // Сonverting usernames to lower case for easily further search
 for(let i = 0, n = userNames.length; i < n; i++){

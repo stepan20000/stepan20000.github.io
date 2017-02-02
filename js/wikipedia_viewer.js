@@ -7,14 +7,17 @@
 			$newDiv.appendTo(".result");
 			$newLink.appendTo($newDiv);
 			$newText.insertAfter($newLink);
-  		};
+  		}; 		
 	}
 
 $( document ).ready(function(){
-	
-	
 	$( "p" ).on( "keyup", function (event) {
 			if (event.target.value === "") {
+				$(".footer").css({
+					position: "absolute",
+					bottom: "10px",
+					"padding-right": "5%"
+					});
 				$(".cell").remove();
 				$(".window").css({"margin-top" : "10%"});
 				$(".logo").css({"float" : "none"});
@@ -22,6 +25,11 @@ $( document ).ready(function(){
 				$("#logo-img").css({"max-width" : "170px"});			
 			}
 			else {
+				$(".footer").css({
+					position: "relative",
+					bottom: "-25px",
+					"padding-right": "0" 
+				});
 				$(".window").css({"margin-top": "0%"});
 				$(".logo").css({"float" : "left"});
 				$(".input").css({"float" : "left", "margin-left" : "40px"});
@@ -43,5 +51,4 @@ $( document ).ready(function(){
 	        });
 	    }
 	});
-
 });
