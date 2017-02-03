@@ -33,12 +33,13 @@ p {
 	
 }
 .plate {
-	border-color:#fff;
+	border-color:#ddd;
 	border-style: solid;
 	border-width: 8px;
-	border-radius: 8px;
-	background-color: rgba(120, 120, 120, 0.6);
+	border-radius: 15px;
+	background-color: rgba(120, 120, 120, 0.8);
 	padding: 2% 2% 1% 3%;
+	box-shadow: 3px 0 10px rgba(50, 22, 80, 0.5);
 	 
 }
 .date-top-border {
@@ -74,5 +75,30 @@ p {
 }
 #wind-icon {
 	filter: invert(100%);
+}
+.footer{
+	position: absolute;
+	width: 100%;
+   left: 0; 
+  	right: 0;
+  	bottom: 10px;
+  	width: 100%;
+  	height: 15px;
+  	color: #bbb;
+  	padding-right: 5%;
+}
+.footer p{
+	text-align: right;
+	font-family: 'Farsan', cursive;
+	text-indent: 0em;
+	font-size: 10px;
+}
+.footer a {
+ 		color: #ccc;
+ 		text-decoration: none;	
+}
+.footer a:hover, .footer a:focus {
+ 		color: #428BCA;
+ 		text-decoration: underline;
 }
 
