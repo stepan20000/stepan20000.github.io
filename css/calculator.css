@@ -1,0 +1,172 @@
+@font-face {
+	font-family: digital;
+	src: url(../fonts/digital-7-mono.ttf);
+}
+body {
+/*	background-image: linear-gradient(to left, #B993D6, #8CA6DB);*/
+	background-color: #fff; 
+	background-image: 
+	linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+	linear-gradient(#eee .1em, transparent .1em);
+	background-size: 100% 1.2em;
+}
+#myCalc {
+	width: 300px;
+	height: 500px;
+	background-color: #333;
+	margin: 7% auto;
+	padding: 20px 20px 0 20px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	border: 2px solid #908b85;
+  	box-shadow: 3px 10px 15px 2px rgba(35, 24, 24, 0.5), inset -1px -6px 12px 0.1px #89847e;
+}
+.screen-section {
+	height: 100px;
+	width: 260px;
+	background-color: #ccc;
+	border-radius: 6px;
+	position: relative;
+}
+.screen-holder {
+	background-color: #172002;
+	height: 80px;
+	width: 230px;
+	position: absolute;
+	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	border-radius: 3px
+
+}
+.screen {
+	background-color:#0C1D09;
+	border-bottom: solid 8px #0C1D09;
+	border-top: solid 8px #0C1D09;
+	border-right: solid 4px #0C1D09;
+	border-left: solid 4px #0C1D09;
+	width: 200px;
+	margin: auto;
+	position: absolute;
+	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	border-radius: 2px;
+  	text-align: center;
+}
+.screen-item {
+	color: #09f609;
+	font-size: 34px;
+	font-family: digital;
+	display: inline;
+	width: 20px;
+	text-align: right;
+	opacity: 0.0;
+	text-shadow: 0 0 1px rgba(9, 246, 9, 0.6); 
+}
+.dot {
+	margin-left: -5px;
+	margin-right: -10px;
+}
+.border {
+	height: 15px;
+}
+.keyboard {
+	height: 365px;
+	width: 260px;
+	background-color: #ccc;
+	position: absolute;
+	border-radius: 2px;
+	box-shadow: 0 2px rgba(150, 150, 150, 0.2);
+}
+/*/----------------------keyboard---------------------/*/
+.keys {
+	padding: 15px;
+	text-align: justify;
+	text-align-last: justify;
+}
+#myCalc button {
+	display: inline-block;
+	margin-bottom: 15px;
+	width: 45px;
+	height: 45px;
+	font-size: 30px;
+	color: #fff;
+	background-color: rgb(47, 49, 44);
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	cursor: pointer;
+  	text-align: center;
+  	text-align-last: center; 	
+  	text-decoration: none;
+	box-shadow: 0px 3px 1px 1px #444141, inset -2px -1px 10px 1px rgba(129, 76, 76, 0.5);
+}
+#myCalc button:active, #myCalc .math-button:active {
+  transform: translateY(2px);
+/*  box-shadow: none;*/
+	box-shadow: 0px 1px 0 0 #514d4d, inset -2px -1px 5px 0px rgba(129, 76, 76, 0.5);
+}
+#myCalc .big-button {
+	width: 80px;
+}
+#myCalc .math-button {
+	background-color: rgb(87, 108, 145);
+	box-shadow: 0px 3px 1px 1px #444141, inset -2px -1px 10px 1px rgba(10, 30, 99, 0.5);
+}
+#myCalc #clear {
+	font-size: 40px;
+	vertical-align: bottom;
+	background-color: rgb(190, 71, 73);
+}
+/*/------------------ON-OFF switch---------------/*/
+.switch-row {
+	margin-top: 10px;
+	margin-left: 15px;
+}
+.onoffswitch {
+		box-shadow: 0px 1px 1px 1px #444141, inset -2px -1px 10px 1px rgba(129, 76, 76, 0.5);
+    position: relative; width: 51px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 3px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 14px; padding: 0; line-height: 14px;
+    font-size: 10px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 5px;
+    background-color: #950C0C; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 5px;
+    background-color: #303030; color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 6px; margin: 4px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 33px;
+    border: 2px solid #999999; border-radius: 3px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
