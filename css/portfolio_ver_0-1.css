@@ -1,0 +1,384 @@
+ @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700|Titillium+Web:700');
+body {
+	color: #333;
+	background: #f8f8f8;
+	font-family: 'PT Sans', sans-serif;
+	font-style: normal;
+}
+h3 {
+/*	text-shadow: 1px 1px 1px rgba(25,25,25, 0.5);*/
+}
+a, a:active, a:visited {
+	text-decoration: none;
+	color: #333;
+}
+.main-wrapper {
+	margin: 0px auto;
+  	width: 98%;
+}
+.border {
+	height: 0px;
+}
+
+.page {
+	display: flex;
+	align-items: flex-start;	
+}
+/*-------------------------my-info-------------------------------------*/
+/*----------about-----------*/
+.my-info {
+	width: 20%;
+	min-width: 190px;
+	text-align: center;	
+	padding-top: 20px;
+/*	text-shadow: 1px 1px 1px rgba(25,25,25, 0.5);*/
+}
+.my-info p {
+	font-size: 75%;	
+	margin: 3px auto;
+}
+.my-info h3 {
+	font-size: 100%;	
+}
+.my-foto {
+	padding-top: 10px;
+	margin: 0 auto;	
+}
+#my-foto-img {
+	width: 50%;
+	border-radius: 50%;
+/*	box-shadow: 5px 2px 20px rgba(63, 83, 104, 0.55);*/
+}
+.my-info .section {
+	width: 100%;
+	text-align: center;
+	margin: 10% 0 10% 0;
+	
+}
+/*------------skills--------------*/
+.inner {
+	text-align: center;
+}
+.inner i {
+	line-height: 50px;
+}
+.inner h3 {
+	padding-top: 5%;
+	padding-bottom: 5%;
+	border-top: 2px dashed #333;
+    box-shadow:  inset 0 1px 0 0 #333, 0 -1px 0 0 #333;
+	margin-bottom: 10px;
+	margin: 3px auto;
+} 
+.dev {
+	font-size: 250%;
+	margin: 3%;
+/*	text-shadow: 1px 1px 1px rgba(25,25,25, 0.5);*/
+}
+/*-------contacts---------*/
+#contacts {
+	border-bottom: none;
+}
+#contacts a {
+	margin: 0 2%;
+}
+.section ul, section p {
+text-align: justify;
+}
+
+#contacts {
+	text-align: center;	
+	margin-bottom: 40px;	
+}	
+#contacts p {
+	margin: 5px auto;
+}
+#contacts .contacts-icon {
+	font-size: 150%;
+  	display: inline-block;
+  	text-shadow: 1px 1px 1px rgba(0,0,0, 0.5);
+  	transition: 0.2s;
+  	cursor: pointer;
+}
+#contacts .contacts-icon:hover {
+  		transform: scale(1.2);
+  		transition: 0.2s;
+  		text-shadow: 1px 1px 1px rgba(225,225,225, 0.5);
+  	}
+#about h3 {
+	font-weight: 700;
+	font-size: 110%;
+	margin-bottom: 1%;
+}
+#email {
+	font-size: 13px;  	
+}
+/*----------------------works-------------------------------------*/
+.works {
+	text-align: center;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+.works {
+	text-align: center;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+.works-header {
+	width: 85%;
+	text-align: justify;
+	margin: 0 auto;
+	padding: 10px;
+	position: relative;
+	border-bottom: 2px dashed #333;
+    box-shadow:  inset 0 -1px 0 0 #333, 0 1px 0 0 #333;
+   	font-style: italic;
+    text-indent: 1em;
+/*  text-shadow: 1px 1px 10px #41607a;*/
+}
+.works-section {
+	margin: 10px 15px 0 15px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.single-work {
+	width: 28%;
+	min-height: 180px;
+	min-width: 250px;
+	text-align: center;
+	margin: 10px;
+	padding-top: 10px;
+	border-radius: 3px;
+	border: 2px solid #ccc;
+	background-color: #e1e4ec;
+}
+.single-work .work-image-container {
+	width: 92%;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+.single-work .work-image-container .mask {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.1;
+    background-color: rgba(201,201,201, 0.8); 
+	display: flex;
+	align-items: center;
+}
+.single-work .work-image-container .mask p {
+	margin: 0 5%;
+}
+.single-work .work-image-container img {
+	max-width: 100%;
+	height: 100%;
+}
+.work-title {
+	width: 92%;
+  	margin: 0 auto;
+	margin-bottom: 3%;
+	font-size: 90%;
+	transition: 0.2s;
+}
+.work-title h3 {
+	text-shadow: 10px 4px 20px #00276bcc;
+}
+.work-title:hover {
+	text-shadow: 1px 1px 10px #324554;
+	transform: scale(1.1);
+}
+.work-title h3:hover {
+	text-shadow: 1px 1px 10px #324554;
+}
+/*---footer--- */
+footer{
+   	left: 0; 
+  	right: 0;
+  	bottom: 10px;
+  	height: 15px;
+  	padding-right: 5%;
+}
+footer p{
+	text-align: right;
+	text-indent: 0em;
+	font-size: 10px;
+}
+footer a, footer a:active, footer a:visited  {
+	text-decoration: none !important;
+}
+/*---back-to-top button--- */
+.back-to-top {
+	display: inline-block;
+	opacity: 0.0;
+	background: none;
+	text-align: center;
+	position: fixed;
+	margin: 0 2% 5% 0;
+	bottom: 0;
+	right: 0;
+	border-radius: 30%;
+	z-index: 100;
+	border: solid 2px #fff;	
+	transition: 0.2s;
+	transition: opacity 1.5s ease;
+}
+.back-to-top:hover {
+	transition: 0.2s;
+	transform: scale(1.1);
+	text-shadow: 1px 1px 1px rgba(0,0,0, 0.5);	
+}
+
+/*/-----Animation section start-----/*/
+.animation img { 
+    transition: all 0.2s ease-in;
+}
+.animation .mask {
+    opacity: 0;
+    background-color: rgba(201,201,201, 0.7); 
+    transition: all 0.4s ease-in-out;
+}
+.animation p { 
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.2s linear;
+    color: #061420;
+}
+.animation a {
+	color: #143f60;
+}
+
+/*====================*/
+
+.animation:hover img { 
+    transform: scale(1.1);
+    
+} 
+.animation:hover .mask { 
+    opacity: 1;
+}
+.animation:hover p {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.animation:hover p {
+    transition-delay: 0.1s;
+}
+
+/*/-----Animation section end-----/*/
+
+
+
+@media screen and (max-width: 1073px) {
+	.single-work {
+	width: 45%;
+	}
+}
+@media screen and (max-width: 800px) {
+	body {
+		background: linear-gradient(to top, #304352, #839292);
+	}
+	.page {
+		display: block;	
+		padding: 0 10px 0 10px;
+	}
+	.border {
+		height: 0px;
+	}
+/*-----------header----------------*/
+	header {
+		border-bottom: 2px dashed #fff;
+        box-shadow:  inset 0 -1px 0 0 #fff, 0 1px 0 0 #fff;	
+        text-shadow: 1px 1px 1px rgba(25,25,25, 0.5);
+	}
+	.header-links {
+		text-align: center;	
+		color: #fff;
+		margin: 10px 0 -10px 0;	
+		font-size: 120%;		
+	}
+	header a{
+		margin: 0 5px 0 5px;	
+	}
+/*-----------my-info----------------*/
+	.my-info {
+		width: 100%;
+		display: flex;
+		padding-top: 0;
+	}
+	.my-info .section {
+		width: 30%;
+		text-align: center;
+	}
+	.my-foto {
+		padding-top: 15px;	
+	}
+	.my-info h3 {
+		font-size: 90%;	
+	}
+	.my-info h3, .my-info p {
+	margin: 3px auto;	
+	}
+	.inner h3 {
+		padding-top: 2%;
+		padding-bottom: 0;
+	}
+/*/ --------------------------skills ------------------------------------------------/*/
+	.dev {
+		font-size: 300%;
+		margin: 2%;
+	}
+	#skills {
+		margin-bottom: 3%;
+	}
+
+	
+/*/ -----------------------------contacts -------------------------------------------- /*/
+	#contacts .contacts-icon {
+		font-size: 175%;
+	}
+/*/-----------------------------works------------------------------------------------/*/
+	.works-header {
+		border: none;
+		box-shadow: none;
+		position: relative;
+	}
+	#works-header {
+		font-size: 125%;	
+	}
+	.vertical-center {
+		width: 90%;
+		position: absolute;
+		margin-top: auto;
+		margin-bottom: auto;
+		top: 50%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
+	}
+
+}
+@media screen and (max-width: 626px) {
+	.single-work {
+		width: 80%;
+	}
+	#about h3 {
+		font-size: 90%;	
+	}
+	#works-header {
+		font-size: 110%;	
+	}
+	.my-info {
+		min-height: 130px;
+	}
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
