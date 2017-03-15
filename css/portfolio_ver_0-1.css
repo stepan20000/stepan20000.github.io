@@ -147,7 +147,7 @@ text-align: justify;
 .single-work {
 	width: 28%;
 	height: 28%;
-	min-height: 180px;
+/*	min-height: 180px;*/
 	min-width: 250px;
 	text-align: center;
 	margin: 10px;
