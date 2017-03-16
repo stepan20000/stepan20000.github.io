@@ -276,7 +276,7 @@ footer a, footer a:active, footer a:visited  {
 
 @media screen and (max-width: 1073px) {
 	.single-work {
-	width: 45%;
+		width: 45%;
 	}
 }
 @media screen and (max-width: 800px) {
@@ -294,12 +294,12 @@ footer a, footer a:active, footer a:visited  {
 	header {
 		border-bottom: 2px dashed #fff;
         box-shadow:  inset 0 -1px 0 0 #fff, 0 1px 0 0 #fff;	
-        text-shadow: 1px 1px 1px rgba(25,25,25, 0.5);
+/*        text-shadow: 1px 1px 1px rgba(25,25,25, 0.5);*/
 	}
 	.header-links {
 		text-align: center;	
 		color: #fff;
-		margin: 10px 0 -10px 0;	
+		margin: 0 0 -10px 0;	
 		font-size: 120%;		
 	}
 	header a{
@@ -322,7 +322,7 @@ footer a, footer a:active, footer a:visited  {
 		font-size: 90%;	
 	}
 	.my-info h3, .my-info p {
-	margin: 3px auto;	
+		margin: 3px auto;	
 	}
 	.inner h3 {
 		padding-top: 2%;
@@ -360,6 +360,9 @@ footer a, footer a:active, footer a:visited  {
   		left: 50%;
   		transform: translate(-50%, -50%);
 	}
+	.back-to-top {
+		margin: 0 1% 11% 0;	
+	}
 
 }
 @media screen and (max-width: 626px) {
@@ -374,6 +377,42 @@ footer a, footer a:active, footer a:visited  {
 	}
 	.my-info {
 		min-height: 130px;
+	}
+}
+@media screen and (max-width: 430px) {
+	.my-info {
+		display: block;	
+	}
+	.my-info .section {
+		margin: auto;
+		width: 125px;	
+	}
+	.vertical-center {
+		width: 90%;
+		position: relative;
+		margin-top: auto;
+		margin-bottom: auto;
+		top: 0;
+  		left: 0;
+  		transform: none;
+	}
+	#works-header {
+		font-size: 90%;	
+		width: 100%;
+	}
+	header a {
+		margin: 0 1px 0 1px;	
+	}
+	.single-work {
+		width: 100%;
+		min-width: 100px;
+		min-height: 0;	
+	}
+	.work-title {
+		font-size: 	
+	}
+	.dev	{
+		font-size: 220%;
 	}
 }
 .clearfix:after {

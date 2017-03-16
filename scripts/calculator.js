@@ -22,10 +22,6 @@ function MakeCalc(calcTarget) {
 	});
 	
 	this._keyboardDriver = this._keyboardDriver.bind(this);
-	
-	//this._showOnScreen(2.828427125);
-	//this._showOnScreen(2.3);
-	
 }	
 
 // The method which makes the on-off switch works, if check-box is checked the _switchOnCalc method from .prototype object is invoked
