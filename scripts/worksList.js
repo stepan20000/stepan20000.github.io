@@ -36,9 +36,16 @@ var worksList = [
 	},
 	{	
 		id: 5,
-		title: "Twitchtv JSON API ",
+		title: "Twitchtv JSON API",
 		description: 'The realization of <a href="https://www.freecodecamp.com/challenges/use-the-twitchtv-json-api" target="_blank">"Use the Twitchtv JSON API"</a> task on freeCodeCamp',
 		linkToDemo: "https://stepan20000.github.io/twitchtv.html",
 		image: "images/portfolio_ver_0/twitchtv.png",
+	},
+	{	
+		id: 6,
+		title: "JavaScript Calculator",
+		description: 'The realization of <a href="https://www.freecodecamp.com/challenges/build-a-javascript-calculator" target="_blank">"Build a JavaScript Calculator"</a> task on freeCodeCamp. Implemented on pure JavaScript.',
+		linkToDemo: "https://stepan20000.github.io/calculator.html",
+		image: "images/portfolio_ver_0/calc.png",
 	},
 ];

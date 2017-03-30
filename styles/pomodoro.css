@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css?family=Courgette");
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #e3f0f3; }
+
+#pomodoro {
+  border-radius: 60px 60px 10px 10px;
+  width: 300px;
+  padding-top: 8px;
+  height: 340px;
+  margin-top: 7%;
+  margin-left: auto;
+  margin-right: auto;
+  background: #dc7461;
+  transition: 1.0s;
+  box-shadow: 0 0 2px 1px #a95546; }
+  #pomodoro button {
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #409aab;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 1px 2px 3px 3px #a95546; }
+  #pomodoro button:hover {
+    background-color: #7ebcc8; }
+  #pomodoro button:active {
+    background-color: #7ebcc8;
+    box-shadow: 1px 2px 2px #42231d;
+    transform: translateY(2px); }
+  #pomodoro .timers button {
+    box-shadow: 0 1px 3px 3px #a95546;
+    border: 1px solid #bfdee4;
+    font-weight: bold; }
+  #pomodoro .timers button:active {
+    box-shadow: 0 2px 2px #42231d;
+    transform: translateY(1px); }
+  #pomodoro .timers .default-set {
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 15px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    font: 14px 'Courgette', cursive; }
+  #pomodoro .time {
+    position: relative;
+    display: block;
+    background: #409aab;
+    width: 200px;
+    height: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 1px #ccc;
+    margin: 20px auto;
+    border: 5px solid rgba(57, 30, 25, 0.8);
+    border-radius: 100px;
+    box-shadow: 1px 1px 15px 3px rgba(66, 35, 29, 0.7); }
+  #pomodoro .center {
+    position: absolute;
+    left: 93px;
+    top: 93px;
+    content: "";
+    padding: 8px;
+    border-radius: 8px;
+    background: #18353a;
+    z-index: 5; }
+  #pomodoro .work-arrow, #pomodoro .relax-arrow, #pomodoro .l1, #pomodoro .l2, #pomodoro .l3, #pomodoro .l4, #pomodoro .l5, #pomodoro .l6 {
+    position: absolute;
+    display: block;
+    content: "";
+    padding: 100px 1px; }
+  #pomodoro .work-arrow::after, #pomodoro .relax-arrow::after {
+    position: absolute;
+    left: 0px;
+    content: ""; }
+  #pomodoro .work-arrow {
+    left: 97px;
+    z-index: 4;
+    transform: rotate(0deg);
+    transform-origin: 3px 100px 0px; }
+  #pomodoro .work-arrow::after {
+    top: 25px;
+    padding: 40px 3px 40px 3px;
+    background: tomato; }
+  #pomodoro .relax-arrow {
+    left: 97px;
+    z-index: 2;
+    transform: rotate(0deg);
+    transform-origin: 3px 100px 0px; }
+  #pomodoro .relax-arrow::after {
+    background: #47e3ff;
+    top: 40px;
+    padding: 28px 3px 28px 3px; }
+  #pomodoro .clock {
+    text-align: center;
+    position: absolute;
+    left: 30px;
+    top: 60px; }
+  #pomodoro .clock .text {
+    font-size: 12px; }
+  #pomodoro .rem-ses {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    font: normal normal bold 22px Arial, sans-serif;
+    background-color: #bfdee4;
+    border-radius: 50%;
+    color: #18353a;
+    margin-top: 5px;
+    padding: 2px;
+    text-indent: -1px;
+    text-shadow: 1px 1px 1px white; }
+  #pomodoro .text {
+    color: white;
+    font: 14px 'Courgette', cursive;
+    text-shadow: 0 0 1px #18353a; }
+  #pomodoro .l1 {
+    transform: rotate(0deg); }
+  #pomodoro .l2 {
+    transform: rotate(30deg); }
+  #pomodoro .l3 {
+    transform: rotate(60deg); }
+  #pomodoro .l4 {
+    transform: rotate(90deg); }
+  #pomodoro .l5 {
+    transform: rotate(120deg); }
+  #pomodoro .l6 {
+    transform: rotate(150deg); }
+  #pomodoro .l1, #pomodoro .l2, #pomodoro .l3, #pomodoro .l4, #pomodoro .l5, #pomodoro .l6 {
+    left: 98px;
+    z-index: 5; }
+  #pomodoro .l1::before, #pomodoro .l1::after, #pomodoro .l2:before, #pomodoro .l2:after, #pomodoro .l3:before, #pomodoro .l3:after, #pomodoro .l4:before, #pomodoro .l4:after, #pomodoro .l5:before, #pomodoro .l5:after, #pomodoro .l6:before, #pomodoro .l6:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    padding: 5px 2px 5px 1px;
+    background: #18353a; }
+  #pomodoro .l1::before, #pomodoro .l2::before, #pomodoro .l3::before, #pomodoro .l4::before, #pomodoro .l5::before, #pomodoro .l6::before {
+    top: 5px; }
+  #pomodoro .l1::after, #pomodoro .l2::after, #pomodoro .l3::after, #pomodoro .l4::after, #pomodoro .l5::after, #pomodoro .l6::after {
+    bottom: 5px; }
+  #pomodoro .ln1::before, #pomodoro .ln2::before, #pomodoro .ln3::before, #pomodoro .ln4::before, #pomodoro .ln5::before, #pomodoro .ln6::before,
+  #pomodoro .ln7::before, #pomodoro .ln8::before, #pomodoro .ln9::before, #pomodoro .ln10::before, #pomodoro .ln11::before, #pomodoro .ln12::before,
+  #pomodoro .ln13::before, #pomodoro .ln14::before, #pomodoro .ln15::before, #pomodoro .ln16::before, #pomodoro .ln17::before, #pomodoro .ln18::before,
+  #pomodoro .ln19::before, #pomodoro .ln20::before, #pomodoro .ln21::before, #pomodoro .ln22::before, #pomodoro .ln23::before, #pomodoro .ln24::before,
+  #pomodoro .ln25::before, #pomodoro .ln26::before, #pomodoro .ln27::before, #pomodoro .ln28::before, #pomodoro .ln29::before, #pomodoro .ln30::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln1::after, #pomodoro .ln2::after, #pomodoro .ln3::after, #pomodoro .ln4::after, #pomodoro .ln5::after, #pomodoro .ln6::after,
+  #pomodoro .ln7::after, #pomodoro .ln8::after, #pomodoro .ln9::after, #pomodoro .ln10::after, #pomodoro .ln11::after, #pomodoro .ln12::after,
+  #pomodoro .ln13::after, #pomodoro .ln14::after, #pomodoro .ln15::after, #pomodoro .ln16::after, #pomodoro .ln17::after, #pomodoro .ln18::after,
+  #pomodoro .ln19::after, #pomodoro .ln20::after, #pomodoro .ln21::after, #pomodoro .ln22::after, #pomodoro .ln23::after, #pomodoro .ln24::after,
+  #pomodoro .ln25::after, #pomodoro .ln26::after, #pomodoro .ln27::after, #pomodoro .ln28::after, #pomodoro .ln29::after, #pomodoro .ln30::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .controls {
+    border-radius: 20px;
+    box-shadow: 0 0 5px 5px white;
+    clear: both;
+    color: #409aab;
+    font: 30px sans-serif;
+    margin: auto;
+    text-align: center;
+    text-shadow: 0 0 2px #bfdee4;
+    width: 150px; }
+  #pomodoro .fa-play:hover, #pomodoro .fa-pause:hover, #pomodoro .fa-stop:hover {
+    color: #7ebcc8;
+    cursor: pointer;
+    transform: scale(1.1); }
+  #pomodoro .but-cont {
+    clear: both; }
+  #pomodoro .show-set {
+    clear: both;
+    margin: 22px auto;
+    display: block;
+    font-size: 14px;
+    padding: 1px; }
+  #pomodoro .relax, #pomodoro .work, #pomodoro .sessions {
+    width: 50%;
+    float: left; }
+  #pomodoro .value {
+    display: inline-block;
+    font: normal normal bold 22px Arial, sans-serif;
+    margin: 2px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    background: #ddd;
+    padding: 2px;
+    border-radius: 50%;
+    vertical-align: baseline;
+    line-height: 28px; }
+  #pomodoro .relax .value {
+    color: #47e3ff;
+    text-shadow: 0 0 1px #409aab; }
+  #pomodoro .work .value {
+    color: tomato; }
+  #pomodoro .sessions .value {
+    color: #18353a;
+    text-shadow: 1px 1px 1px white; }
+  #pomodoro .timers {
+    opacity: 0;
+    text-align: center;
+    transition: 1.0s 0.8s;
+    width: 90%;
+    margin: auto;
+    height: 115px;
+    padding: 10px 5px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 7px 3px white; }
+  #pomodoro .timers button {
+    padding: 0;
+    font: 20px sans-serif monospace;
+    width: 30px;
+    height: 30px;
+    margin: 3px; }
+  #pomodoro .minus p, #pomodoro .plus p {
+    text-indent: 0; }
+  #pomodoro .border {
+    height: 60px; }
+  #pomodoro .control-inactive {
+    color: #5d868d;
+    text-shadow: none; }
+  #pomodoro .control-inactive:hover {
+    color: #5d868d;
+    cursor: default;
+    transform: scale(1); }
+  #pomodoro .button-inactive {
+    background-color: #5d868d;
+    border: none !important; }
+  #pomodoro .button-inactive:hover {
+    background-color: #5d868d;
+    cursor: default;
+    transform: scale(1);
+    transform: translateY(0) !important; }
+  #pomodoro .button-inactive:active {
+    box-shadow: 0 1px 3px 3px #a95546 !important; }
+  #pomodoro .work-run::after, #pomodoro .work-run::before {
+    background-color: tomato; }
+  #pomodoro .relax-run::after, #pomodoro .relax-run::before {
+    background-color: #47e3ff; }
+
+/*# sourceMappingURL=pomodoro.css.map */

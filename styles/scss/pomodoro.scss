@@ -1,0 +1,324 @@
+@import "color-functions.scss";
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+$first-color: hsl(9, 100%, 64%);
+$relax-arrow-color: complement($first-color);
+$har-mix-first: harmonious-mix($relax-arrow-color, $first-color);
+$har-mix-sec: harmonious-mix($first-color, $relax-arrow-color);
+$width: 300px;
+*{
+    margin: 0;
+    padding: 0;
+} 
+body {
+  background-color: lighten(mix(white, mix-neutral($har-mix-sec), 50%), 10%);
+}
+
+#pomodoro {
+    border-radius: 60px 60px 10px 10px;
+    width: $width;
+    padding-top: 8px;
+    height: 340px;
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+    background: mix(darken(mix($relax-arrow-color, $har-mix-first, 16%), 17%), $har-mix-first, 10%);
+    transition: 1.0s;
+    box-shadow: 0 0 2px 1px darken(mix($relax-arrow-color, $har-mix-first, 16%), 17%);
+  
+  button {
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color:darken(mix($first-color, $har-mix-sec, 16%), 18%);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 1px 2px 3px 3px darken(mix($relax-arrow-color, $har-mix-first, 16%), 17%);
+  }
+  
+  button:hover {background-color: mix-neutral($har-mix-sec);} 
+
+  button:active {
+    background-color: mix-neutral($har-mix-sec);
+    box-shadow: 1px 2px 2px mix(black, $har-mix-first, 71%);
+    transform: translateY(2px);
+  }
+  
+  .timers button {
+    box-shadow: 0 1px 3px 3px darken(mix($relax-arrow-color, $har-mix-first, 16%), 17%);
+    border: 1px solid mix(white, mix-neutral($har-mix-sec), 50%);
+    font-weight: bold;
+  }  
+  
+   .timers button:active {
+     box-shadow: 0 2px 2px mix(black, $har-mix-first, 71%);
+     transform: translateY(1px);
+    }  
+  
+  .timers .default-set {
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 15px;
+    width: auto; 
+    height: auto;
+    padding: 5px; 
+    font: 14px 'Courgette', cursive;  
+  }   
+  
+  .time {
+      position: relative;
+      display: block;
+      background: darken(mix($first-color, $har-mix-sec, 16%), 18%);
+      width: 200px;
+      height: 200px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 1px 1px 1px #ccc;
+      margin: 20px auto;
+      border: 5px solid transparentize(mix(black, harmonious-mix(complement($first-color), $first-color), 75%), 0.2);
+      border-radius: 100px;
+      box-shadow: 1px 1px 15px 3px transparentize(mix(black, harmonious-mix(complement($first-color), $first-color), 71%), 0.3);
+  }
+  .center {
+      position: absolute;
+      left: 93px;
+      top: 93px;
+      content: "";
+      padding: 8px;
+      border-radius: 8px;
+      background: mix(black, $har-mix-sec, 75%);
+      z-index: 5;
+  }
+  .work-arrow, .relax-arrow, .l1, .l2, .l3, .l4, .l5, .l6 {
+      position: absolute;
+      display: block;
+      content: "";
+      padding: 100px 1px;
+  }
+  .work-arrow::after, .relax-arrow::after {
+      position: absolute;
+      left: 0px;
+      content: "";
+  }
+  .work-arrow { 
+    left: 97px;
+    z-index: 4;
+    transform: rotate(0deg);
+    transform-origin: 3px 100px 0px;
+  } 
+  .work-arrow::after {
+      top: 25px;
+      padding: 40px 3px 40px 3px;
+      background: $first-color;
+  }
+  .relax-arrow {    
+    left: 97px; 
+    z-index: 2;
+    transform: rotate(0deg); 
+    transform-origin: 3px 100px 0px; 
+  }
+  .relax-arrow::after {
+      background: $relax-arrow-color;
+      top: 40px;
+      padding: 28px 3px 28px 3px;
+   }  
+   
+  .clock {
+    text-align: center;
+    position: absolute;
+    left: 30px;
+    top: 60px;
+  }
+  
+   .clock .text {
+     font-size: 12px;
+   }   
+  
+  .rem-ses {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      font: normal normal bold 22px Arial, sans-serif;
+      background-color: mix(white, mix-neutral($har-mix-sec), 50%);
+      border-radius: 50%;
+      color: mix(black, $har-mix-sec, 75%);
+      margin-top: 5px; 
+      padding: 2px;
+      text-indent: -1px;
+      text-shadow: 1px 1px 1px pick-contrast($relax-arrow-color);
+      
+  }  
+  
+  .text {
+    color: pick-contrast($relax-arrow-color);
+    font: 14px 'Courgette', cursive; 
+    text-shadow: 0 0 1px mix(black, $har-mix-sec, 75%);
+  }
+  
+  
+  .l1{ transform: rotate(0deg); }
+  .l2{ transform: rotate(30deg); }
+  .l3{ transform: rotate(60deg); }
+  .l4{ transform: rotate(90deg); }
+  .l5{ transform: rotate(120deg); }
+  .l6{ transform: rotate(150deg); }
+  .l1, .l2, .l3, .l4, .l5, .l6  { left: 98px; z-index: 5; }
+  .l1::before, .l1::after, .l2:before, .l2:after, .l3:before, .l3:after, .l4:before, .l4:after, .l5:before, .l5:after, .l6:before, .l6:after {
+      position:absolute;
+      content: "";
+      left: 0;
+      padding: 5px 2px 5px 1px;
+      background: mix(black, $har-mix-sec, 75%);;
+  }
+  .l1::before, .l2::before, .l3::before, .l4::before, .l5::before, .l6::before { top: 5px; }
+  .l1::after, .l2::after, .l3::after, .l4::after, .l5::after, .l6::after { bottom: 5px; }
+  .ln1::before, .ln2::before, .ln3::before, .ln4::before, .ln5::before, .ln6::before, 
+  .ln7::before, .ln8::before, .ln9::before, .ln10::before, .ln11::before, .ln12::before, 
+  .ln13::before, .ln14::before, .ln15::before, .ln16::before, .ln17::before, .ln18::before, 
+  .ln19::before, .ln20::before, .ln21::before, .ln22::before, .ln23::before, .ln24::before, 
+  .ln25::before, .ln26::before, .ln27::before, .ln28::before, .ln29::before, .ln30::before {
+      padding: 5px 1px 5px 0; 
+      left: 0px;
+      top: 0px; 
+      background: #fff;
+      position: absolute;
+      display: block;
+      content: "";
+  }
+  .ln1::after, .ln2::after, .ln3::after, .ln4::after, .ln5::after, .ln6::after, 
+  .ln7::after, .ln8::after, .ln9::after, .ln10::after, .ln11::after, .ln12::after, 
+  .ln13::after, .ln14::after, .ln15::after, .ln16::after, .ln17::after, .ln18::after, 
+  .ln19::after, .ln20::after, .ln21::after, .ln22::after, .ln23::after, .ln24::after, 
+  .ln25::after, .ln26::after, .ln27::after, .ln28::after, .ln29::after, .ln30::after {
+      padding: 5px 1px 5px 0; 
+      left: 0px;
+      bottom: 0px; 
+      background: #fff;
+      position: absolute;
+      display: block;
+      content: "";
+  }
+  .controls {
+    border-radius: 20px;
+    box-shadow: 0 0 5px 5px pick-contrast($har-mix-sec);
+    clear: both;
+    color: darken(mix($first-color, $har-mix-sec, 16%), 18%);
+    font: 30px sans-serif;
+    margin: auto;
+    text-align: center;
+    text-shadow: 0 0 2px mix(white, mix-neutral($har-mix-sec), 50%);
+    width: $width /2;    
+  }
+
+  .fa-play:hover, .fa-pause:hover, .fa-stop:hover {
+    color: mix-neutral($har-mix-sec);
+    cursor: pointer;
+    transform: scale(1.1);    
+  } 
+
+  .but-cont {
+    clear: both;
+  }
+  
+  .show-set {
+    clear: both;
+    margin: 22px auto;
+    display: block;
+    font-size: 14px;
+    padding: 1px;
+  }
+  
+  .relax, .work, .sessions {
+    width: 50%;
+    float: left;
+  }
+  
+  .value {
+    display: inline-block;
+    font: normal normal bold 22px Arial, sans-serif;
+    margin: 2px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    background: #ddd;
+    padding: 2px;
+    border-radius: 50%;
+    vertical-align: baseline;
+    line-height: 28px; 
+  }      
+  
+  .relax .value {
+    color: $relax-arrow-color;
+    text-shadow: 0 0 1px darken(mix($first-color, $har-mix-sec, 16%), 18%);  
+  }
+    
+   .work .value {
+      color: $first-color; 
+   }  
+
+   .sessions .value {
+      color: mix(black, $har-mix-sec, 75%);  
+      text-shadow: 1px 1px 1px pick-contrast($relax-arrow-color); 
+   }  
+  
+  .timers {
+    opacity: 0; 
+    text-align: center;
+    transition: 1.0s 0.8s;
+    width: 90%;
+    margin: auto;
+    height: 115px;
+    padding: 10px 5px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 7px 3px pick-contrast($relax-arrow-color);
+  }
+  
+  .timers button {
+    padding: 0;
+    font: 20px sans-serif monospace;
+    width: 30px;
+    height: 30px; 
+    margin: 3px;
+  }  
+  
+  .minus p, .plus p {
+    text-indent: 0;
+  }
+  
+  .border {height: 60px;} 
+  
+  .control-inactive {
+    color: desaturate(darken(mix($first-color, $har-mix-sec, 16%), 18%), 25%);
+    text-shadow: none;
+  }
+  .control-inactive:hover{
+    color: desaturate(darken(mix($first-color, $har-mix-sec, 16%), 18%), 25%);
+    cursor: default;
+    transform: scale(1.0);
+  } 
+  
+  .button-inactive {
+    background-color: desaturate(darken(mix($first-color, $har-mix-sec, 16%), 18%), 25%);
+    border: none !important;
+  }
+  .button-inactive:hover{
+    background-color: desaturate(darken(mix($first-color, $har-mix-sec, 16%), 18%), 25%);
+    cursor: default;
+    transform: scale(1.0);
+    transform: translateY(0) !important;
+  } 
+  .button-inactive:active{
+    box-shadow: 0 1px 3px 3px darken(mix($relax-arrow-color, $har-mix-first, 16%), 17%) !important;
+  }
+  .work-run::after, .work-run::before {
+    background-color: $first-color;
+  }
+  
+  .relax-run::after, .relax-run::before {
+    background-color: $relax-arrow-color;
+  }
+}
+

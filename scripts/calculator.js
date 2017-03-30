@@ -36,13 +36,13 @@ MakeCalc.prototype._makeOnOff = function () {
 }
 
 MakeCalc.prototype._clearDisplay = function () {
-	for(var digit of this.digits){
-			digit.style.opacity = "0.1";
-			digit.innerHTML = "8";						
+	for(var i = 0; i < this.digitsNum; i++){
+			this.digits[i].style.opacity = "0.1";
+			this.digits[i].innerHTML = "8";						
 		}
 	this.digits[0].innerHTML = "-";
-	for(var dot of this.dots){
-			dot.style.opacity = "0.1";			
+	for(var i = 0; i < this.dots.length; i++){
+			this.dots[i].style.opacity = "0.1";			
 		}	
 }
 
@@ -66,11 +66,11 @@ MakeCalc.prototype._switchOnCalc = function(currentCalc) {
 
 //After switching-off we slightly set opacity of all digits and dots to the "0.0" and set all digits values to the "8"
 MakeCalc.prototype._switchOffCalc = function(currentCalc) {
-	for(var digit of this.digits){
-		digit.style.opacity = "0.0";
+	for(var i = 0; i < this.digitsNum; i++){
+			this.digits[i].style.opacity = "0.0";
 	}
-	for(var dot of this.dots){
-		dot.style.opacity = "0.0";			
+	for(var i = 0; i < this.dots.length; i++){
+			this.dots[i].style.opacity = "0.0";			
 	}
 //Remove event listener for keyboard after calculator is switched off
 	this.keys.removeEventListener("click", currentCalc._keyboardDriver);
@@ -82,14 +82,14 @@ MakeCalc.prototype._showOnScreen = function(num) {
 		this._clearDisplay();
 		this.overflowFlag = true;
 		this.numberDisplayed = 0;
-		for(var digit of this.digits){
-			digit.style.opacity = "1.0";
-			digit.innerHTML = "0";						
+		for(var i = 0; i < this.digitsNum; i++){
+			this.digits[i].style.opacity = "1.0";
+			this.digits[i].innerHTML = "0";						
 		}
 		this.digits[0].innerHTML = "-";
 		this.digits[0].style.opacity = "0.1";
-		for(var dot of this.dots){
-			dot.style.opacity = "1.0";			
+		for(var i = 0; i < this.dots.length; i++){
+			this.dots[i].style.opacity = "1.0";			
 		}
 		return;		
 	}
@@ -151,14 +151,11 @@ MakeCalc.prototype._showOnScreen = function(num) {
 			this.digits[0].innerHTML = "-";
 		}	
 		if (this.overflowFlag) {
-			for(var dot of this.dots){
-				dot.style.opacity = "1.0";			
+		for(var i = 0; i < this.dots.length; i++){
+				this.dots[i].style.opacity = "1.0";			
 			}
 		}
 		else {
-			/*for(var dot of this.dots) {
-				dot.style.opacity = "0.1";
-			}*/
 			this.dots[this.dots.length -1 - dotPosition].style.opacity = "1.0";
 		}
 		for(var i = toDisplay.length -1; i >=0; i --){
