@@ -97,6 +97,7 @@ MakePomodoro.prototype._adjustTimers = function(evt) {
       var audio = new Audio('sounds/pomodoro/minus-click.mp3');
       audio.play();
     }
+    console.log(evt);
     switch(evt.target) {
       case $(this.idPom + ' .work .plus')[0]:
         this.workDur++; 

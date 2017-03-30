@@ -46,7 +46,23 @@ body {
     transform: translateY(2px);
   }
   
+  .timers {
+    opacity: 0; 
+    text-align: center;
+    transition: 1.0s 0.8s;
+    width: 90%;
+    margin: auto;
+    height: 115px;
+    padding: 10px 5px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 7px 3px pick-contrast($relax-arrow-color);
+  }
+  
   .timers button {
+    padding: 0;
+    width: 30px;
+    height: 30px; 
+    margin: 3px;
     box-shadow: 0 1px 3px 3px darken(mix($relax-arrow-color, $har-mix-first, 16%), 17%);
     border: 1px solid mix(white, mix-neutral($har-mix-sec), 50%);
     font-weight: bold;
@@ -246,7 +262,7 @@ body {
     background: #ddd;
     padding: 2px;
     border-radius: 50%;
-    vertical-align: baseline;
+    vertical-align: middle;
     line-height: 28px; 
   }      
   
@@ -263,30 +279,6 @@ body {
       color: mix(black, $har-mix-sec, 75%);  
       text-shadow: 1px 1px 1px pick-contrast($relax-arrow-color); 
    }  
-  
-  .timers {
-    opacity: 0; 
-    text-align: center;
-    transition: 1.0s 0.8s;
-    width: 90%;
-    margin: auto;
-    height: 115px;
-    padding: 10px 5px;
-    border-radius: 20px;
-    box-shadow: inset 0 0 7px 3px pick-contrast($relax-arrow-color);
-  }
-  
-  .timers button {
-    padding: 0;
-    font: 20px sans-serif monospace;
-    width: 30px;
-    height: 30px; 
-    margin: 3px;
-  }  
-  
-  .minus p, .plus p {
-    text-indent: 0;
-  }
   
   .border {height: 60px;} 
   
