@@ -220,7 +220,7 @@ body {
     background: #ddd;
     padding: 2px;
     border-radius: 50%;
-    vertical-align: middle;
+    vertical-align: top;
     line-height: 28px; }
   #pomodoro .relax .value {
     color: #47e3ff;
