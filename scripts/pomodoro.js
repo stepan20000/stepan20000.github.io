@@ -3,8 +3,8 @@ function MakePomodoro($pomodoro) {
   this.pomodoro = $pomodoro;
   this.idPom = '#' + this.pomodoro.attr("id");
   
-  this.workDurDef = 7;
-  this.relaxDurDef = 5;
+  this.workDurDef = 25 * 60;
+  this.relaxDurDef = 5 * 60;
   this.sessionsDef = 1;
   this.workDur = this.workDurDef;
   this.relaxDur = this.relaxDurDef;
@@ -83,11 +83,11 @@ MakePomodoro.prototype._loadDefaultSet = function () {
   this.relaxDur = this.relaxDurDef;
   this.sessions = this.sessionsDef;
   $( this.idPom + ' .rem-ses').html(this.sessionsDef);
-  $( this.idPom + ' .relax .value').html(this.relaxDurDef);
-  $( this.idPom + ' .work .value').html(this.workDurDef);
+  $( this.idPom + ' .relax .value').html(this.relaxDurDef / 60);
+  $( this.idPom + ' .work .value').html(this.workDurDef / 60);
   $( this.idPom + ' .sessions .value').html(this.sessionsDef);
-  $( this.idPom + ' .work-arrow').css('transform','rotate(' + this.workDurDef * 6 + 'deg)');
-  $( this.idPom + ' .relax-arrow').css('transform','rotate(' + this.relaxDurDef * 6 + 'deg)');
+  $( this.idPom + ' .work-arrow').css('transform','rotate(' + this.workDurDef * 0.1 + 'deg)');
+  $( this.idPom + ' .relax-arrow').css('transform','rotate(' + this.relaxDurDef * 0.1 + 'deg)');
 }
 
 MakePomodoro.prototype._adjustTimers = function(evt) {
@@ -103,36 +103,36 @@ MakePomodoro.prototype._adjustTimers = function(evt) {
     console.log(evt);
     switch(evt.target) {
       case $(this.idPom + ' .work .plus')[0]:
-        this.workDur++; 
-        if(this.workDur > 60) {
-          this.workDur = 60;  
+        this.workDur += 60; 
+        if(this.workDur > 3600) {
+          this.workDur = 3600;  
         } 
-        $('.work .value').html(this.workDur); 
-        $('.work-arrow').css('transform','rotate(' + this.workDur * 6 + 'deg)');
+        $('.work .value').html(this.workDur / 60); 
+        $('.work-arrow').css('transform','rotate(' + this.workDur * 0.1 + 'deg)');
         break;
       case $(this.idPom + ' .work .minus')[0]:
-        this.workDur--;
-        if(this.workDur < 1) {
-          this.workDur = 1;  
+        this.workDur -= 60;
+        if(this.workDur < 60) {
+          this.workDur = 60;  
         } 
-        $('.work .value').html(this.workDur); 
-        $('.work-arrow').css('transform','rotate(' + this.workDur * 6 + 'deg)');
+        $('.work .value').html(this.workDur / 60); 
+        $('.work-arrow').css('transform','rotate(' + this.workDur * 0.1 + 'deg)');
         break;
       case $(this.idPom + ' .relax .plus')[0]:
-        this.relaxDur++;
-        if(this.relaxDur > 60) {
-          this.relaxDur = 60;  
+        this.relaxDur += 60;
+        if(this.relaxDur > 3600) {
+          this.relaxDur = 3600;  
         } 
-        $('.relax .value').html(this.relaxDur); 
-        $('.relax-arrow').css('transform','rotate(' + this.relaxDur * 6 + 'deg)');
+        $('.relax .value').html(this.relaxDur / 60); 
+        $('.relax-arrow').css('transform','rotate(' + this.relaxDur * 0.1 + 'deg)');
         break;
       case $(this.idPom + ' .relax .minus')[0]:
-        this.relaxDur--;
-        if(this.relaxDur < 1) {
-          this.relaxDur = 1;  
+        this.relaxDur -= 60;
+        if(this.relaxDur < 60) {
+          this.relaxDur = 60;  
         } 
-        $('.relax .value').html(this.relaxDur); 
-        $('.relax-arrow').css('transform','rotate(' + this.relaxDur * 6 + 'deg)');
+        $('.relax .value').html(this.relaxDur / 60); 
+        $('.relax-arrow').css('transform','rotate(' + this.relaxDur * 0.1 + 'deg)');
         break;
       case $(this.idPom + ' .sessions .plus')[0]:
         this.sessions++;
@@ -222,8 +222,8 @@ MakePomodoro.prototype._play = function() {
     this.pauseFlag = false;
   }  
 
-  $(this.idPom + ' .work-arrow').css('transform','rotate(' + this.workDur * 6 + 'deg)');
-  $(this.idPom + ' .relax-arrow').css('transform','rotate(' + this.relaxDur * 6 + 'deg)');
+  $(this.idPom + ' .work-arrow').css('transform','rotate(' + this.workDur * 0.1 + 'deg)');
+  $(this.idPom + ' .relax-arrow').css('transform','rotate(' + this.relaxDur * 0.1 + 'deg)');
   this.sessionsCount--;
   $( this.idPom + ' .rem-ses').html(this.sessionsCount);
     
@@ -243,7 +243,7 @@ MakePomodoro.prototype._play = function() {
         }
         else if (!_this.pauseFlag) {  
           remainsWork--;
-          $(_this.idPom + ' .work-arrow').css('transform','rotate(' + remainsWork * 6 + 'deg)');
+          $(_this.idPom + ' .work-arrow').css('transform','rotate(' + remainsWork * 0.1 + 'deg)');
           if (remainsWork === 0) {
             clearInterval(workInt);
             resolve(true); 
@@ -269,7 +269,7 @@ MakePomodoro.prototype._play = function() {
         }
         else if (!_this.pauseFlag) {        
           remainsRelax--;
-          $(_this.idPom + ' .relax-arrow').css('transform','rotate(' + remainsRelax * 6 + 'deg)');
+          $(_this.idPom + ' .relax-arrow').css('transform','rotate(' + remainsRelax * 0.1 + 'deg)');
           if (remainsRelax === 0) {
             clearInterval(relaxInt);
             resolve(true); 
