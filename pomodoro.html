@@ -13,17 +13,19 @@
 
   <link href="styles/resetCSS.css" rel="stylesheet"> 
   <link href="styles/pomodoro.css" rel="stylesheet">   
-	<script
+  <script
 			  src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 			  crossorigin="anonymous">
-	</script>	
+	</script>
+	<script type="text/javascript" src="scripts/jquery.lettering.js"></script>
 	<script src="scripts/jquery.animate-colors-min.js"></script> 
   <script src="https://use.fontawesome.com/e9bbf5de1c.js"></script> 
 	<script src="scripts/pomodoro.js"></script> 
 </head>
 <body>
-  <article id="pomodoro">        
+  <article id="pomodoro">   
+    <h1 class="plate">Pomodoro Timer</h1>     
     <div class="time">
   		<div class="center"></div>
   		<div class="work-arrow"></div>
@@ -33,7 +35,6 @@
   		  <p class="rem-ses"> 1 </p>  		
   		</div>
   	</div>
-
   	<div class="controls">
   	  <i class="fa fa-play" aria-hidden="true"></i>
   	  <i class="fa fa-pause control-inactive" aria-hidden="true"></i>
@@ -42,7 +43,7 @@
     <div class="but-cont">
   	  <button class="show-set text">
   	    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-  	    &nbsp Show Settings &nbsp
+  	    &nbsp; Show Settings &nbsp;
   	    <i class="fa fa-chevron-down" aria-hidden="true"></i>
   	  </button>
     </div>
@@ -78,7 +79,7 @@
           <button class="plus"> &#10133; </button> 
         </div>
   	  </div>
-  	   <button class="default-set text"">Defaults</button>
+  	   <button class="default-set text">Defaults</button>
     </div>
   </article>
 </body>

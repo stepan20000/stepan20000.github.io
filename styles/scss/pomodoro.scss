@@ -1,10 +1,16 @@
 @import "color-functions.scss";
-@import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('https://fonts.googleapis.com/css?family=Courgette|Ubuntu+Mono:700');
 $first-color: hsl(9, 100%, 64%);
-$relax-arrow-color: complement($first-color);
-$har-mix-first: harmonious-mix($relax-arrow-color, $first-color);
-$har-mix-sec: harmonious-mix($first-color, $relax-arrow-color);
+$second-color: complement($first-color);
+$har-mix-first: harmonious-mix($second-color, $first-color);
+$har-mix-sec: harmonious-mix($first-color, $second-color);
 $width: 300px;
+$span-width: 24px;
+$num-letters: 14;
+$angle-span: 90deg; 
+$angle-offset: -45deg;
+$angle-per-char: $angle-span / $num-letters;
+
 *{
     margin: 0;
     padding: 0;
@@ -14,17 +20,42 @@ body {
 }
 
 #pomodoro {
-    border-radius: 60px 60px 10px 10px;
-    width: $width;
-    padding-top: 8px;
-    height: 340px;
-    margin-top: 7%;
-    margin-left: auto;
-    margin-right: auto;
-    background: mix(darken(mix($relax-arrow-color, $har-mix-first, 16%), 17%), $har-mix-first, 10%);
-    transition: 1.0s;
-    box-shadow: 0 0 2px 1px darken(mix($relax-arrow-color, $har-mix-first, 16%), 17%);
-  
+  position: relative;
+  border-radius: 60px 60px 10px 10px;
+  width: $width;
+  padding-top: 8px;
+  height: 360px;
+  margin-top: 7%;
+  margin-left: auto;
+  margin-right: auto;
+  background: mix(darken(mix($second-color, $har-mix-first, 16%), 17%), $har-mix-first, 10%);
+  transition: 1.0s;
+  box-shadow: 0 0 2px 1px darken(mix($second-color, $har-mix-first, 16%), 17%);
+    
+  .plate {
+    height: 20px; 
+ }
+ .plate span  {
+    position: absolute;
+    font: 25px Ubuntu Mono, monospace;
+    height: 150px;
+    position: absolute;
+    width: $span-width;
+    left: $width / 2 - $span-width / 2;
+    top: 4px;
+    text-align: center;
+    z-index: 5;
+    transform-origin: bottom center;  
+    color: mix(black, $har-mix-sec, 75%);  
+    text-shadow: 3px 0 4px pick-contrast($second-color);  
+  }
+    
+  @for $i from 1 through $num-letters{
+    .char#{$i} {
+      transform: rotate($angle-offset + $angle-per-char * $i);        
+    }      
+  }
+    
   button {
     font-size: 12px;
     cursor: pointer;
@@ -35,7 +66,7 @@ body {
     background-color:darken(mix($first-color, $har-mix-sec, 16%), 18%);
     border: none;
     border-radius: 15px;
-    box-shadow: 1px 2px 3px 3px darken(mix($relax-arrow-color, $har-mix-first, 16%), 17%);
+    box-shadow: 1px 2px 3px 3px darken(mix($second-color, $har-mix-first, 16%), 17%);
   }
   
   button:hover {background-color: mix-neutral($har-mix-sec);} 
@@ -55,7 +86,7 @@ body {
     height: 115px;
     padding: 10px 5px;
     border-radius: 20px;
-    box-shadow: inset 0 0 7px 3px pick-contrast($relax-arrow-color);
+    box-shadow: inset 0 0 7px 3px pick-contrast($second-color);
   }
   
   .timers button {
@@ -63,7 +94,7 @@ body {
     width: 30px;
     height: 30px; 
     margin: 3px;
-    box-shadow: 0 1px 3px 3px darken(mix($relax-arrow-color, $har-mix-first, 16%), 17%);
+    box-shadow: 0 1px 3px 3px darken(mix($second-color, $har-mix-first, 16%), 17%);
     border: 1px solid mix(white, mix-neutral($har-mix-sec), 50%);
     font-weight: bold;
   }  
@@ -137,7 +168,7 @@ body {
     transform-origin: 3px 100px 0px; 
   }
   .relax-arrow::after {
-      background: $relax-arrow-color;
+      background: $second-color;
       top: 40px;
       padding: 28px 3px 28px 3px;
    }  
@@ -164,38 +195,38 @@ body {
       margin-top: 5px; 
       padding: 2px;
       text-indent: -1px;
-      text-shadow: 1px 1px 1px pick-contrast($relax-arrow-color);
+      text-shadow: 1px 1px 1px pick-contrast($second-color);
       
   }  
   
   .text {
-    color: pick-contrast($relax-arrow-color);
+    color: pick-contrast($second-color);
     font: 14px 'Courgette', cursive; 
     text-shadow: 0 0 1px mix(black, $har-mix-sec, 75%);
   }
   
-  
-  .l1{ transform: rotate(0deg); }
-  .l2{ transform: rotate(30deg); }
-  .l3{ transform: rotate(60deg); }
-  .l4{ transform: rotate(90deg); }
-  .l5{ transform: rotate(120deg); }
-  .l6{ transform: rotate(150deg); }
-  .l1, .l2, .l3, .l4, .l5, .l6  { left: 98px; z-index: 5; }
-  .l1::before, .l1::after, .l2:before, .l2:after, .l3:before, .l3:after, .l4:before, .l4:after, .l5:before, .l5:after, .l6:before, .l6:after {
+  @for $i from 1 through 6 {
+    .l#{$i} {
+      transform: rotate(($i*30)+deg);
+      left: 98px; 
+      z-index: 5;
+    }
+    .l#{$i}::before, .l#{$i}::after {
       position:absolute;
       content: "";
       left: 0;
       padding: 5px 2px 5px 1px;
-      background: mix(black, $har-mix-sec, 75%);;
-  }
-  .l1::before, .l2::before, .l3::before, .l4::before, .l5::before, .l6::before { top: 5px; }
-  .l1::after, .l2::after, .l3::after, .l4::after, .l5::after, .l6::after { bottom: 5px; }
-  .ln1::before, .ln2::before, .ln3::before, .ln4::before, .ln5::before, .ln6::before, 
-  .ln7::before, .ln8::before, .ln9::before, .ln10::before, .ln11::before, .ln12::before, 
-  .ln13::before, .ln14::before, .ln15::before, .ln16::before, .ln17::before, .ln18::before, 
-  .ln19::before, .ln20::before, .ln21::before, .ln22::before, .ln23::before, .ln24::before, 
-  .ln25::before, .ln26::before, .ln27::before, .ln28::before, .ln29::before, .ln30::before {
+      background: mix(black, $har-mix-sec, 75%);
+    }
+    .l#{$i}::before {
+      top: 5px;
+    }
+    .l#{$i}::after {
+      bottom: 5px;
+    }
+  } 
+  @for $i from 1 through 30 {
+    .ln#{$i}::before {
       padding: 5px 1px 5px 0; 
       left: 0px;
       top: 0px; 
@@ -203,20 +234,18 @@ body {
       position: absolute;
       display: block;
       content: "";
-  }
-  .ln1::after, .ln2::after, .ln3::after, .ln4::after, .ln5::after, .ln6::after, 
-  .ln7::after, .ln8::after, .ln9::after, .ln10::after, .ln11::after, .ln12::after, 
-  .ln13::after, .ln14::after, .ln15::after, .ln16::after, .ln17::after, .ln18::after, 
-  .ln19::after, .ln20::after, .ln21::after, .ln22::after, .ln23::after, .ln24::after, 
-  .ln25::after, .ln26::after, .ln27::after, .ln28::after, .ln29::after, .ln30::after {
+    }
+    .ln#{$i}::after {
       padding: 5px 1px 5px 0; 
       left: 0px;
       bottom: 0px; 
       background: #fff;
       position: absolute;
       display: block;
-      content: "";
+      content: "";  
+    }
   }
+ 
   .controls {
     border-radius: 20px;
     box-shadow: 0 0 5px 5px pick-contrast($har-mix-sec);
@@ -267,7 +296,7 @@ body {
   }      
   
   .relax .value {
-    color: $relax-arrow-color;
+    color: $second-color;
     text-shadow: 0 0 1px darken(mix($first-color, $har-mix-sec, 16%), 18%);  
   }
     
@@ -277,7 +306,7 @@ body {
 
    .sessions .value {
       color: mix(black, $har-mix-sec, 75%);  
-      text-shadow: 1px 1px 1px pick-contrast($relax-arrow-color); 
+      text-shadow: 1px 1px 1px pick-contrast($second-color); 
    }  
   
   .border {height: 60px;} 
@@ -303,14 +332,14 @@ body {
     transform: translateY(0) !important;
   } 
   .button-inactive:active{
-    box-shadow: 0 1px 3px 3px darken(mix($relax-arrow-color, $har-mix-first, 16%), 17%) !important;
+    box-shadow: 0 1px 3px 3px darken(mix($second-color, $har-mix-first, 16%), 17%) !important;
   }
   .work-run::after, .work-run::before {
     background-color: $first-color;
   }
   
   .relax-run::after, .relax-run::before {
-    background-color: $relax-arrow-color;
+    background-color: $second-color;
   }
 }
 

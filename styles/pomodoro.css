@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Courgette");
+@import url("https://fonts.googleapis.com/css?family=Courgette|Ubuntu+Mono:700");
 * {
   margin: 0;
   padding: 0; }
@@ -7,16 +7,60 @@ body {
   background-color: #e3f0f3; }
 
 #pomodoro {
+  position: relative;
   border-radius: 60px 60px 10px 10px;
   width: 300px;
   padding-top: 8px;
-  height: 340px;
+  height: 360px;
   margin-top: 7%;
   margin-left: auto;
   margin-right: auto;
   background: #dc7461;
   transition: 1.0s;
   box-shadow: 0 0 2px 1px #a95546; }
+  #pomodoro .plate {
+    height: 20px; }
+  #pomodoro .plate span {
+    position: absolute;
+    font: 25px Ubuntu Mono, monospace;
+    height: 150px;
+    position: absolute;
+    width: 24px;
+    left: 138px;
+    top: 4px;
+    text-align: center;
+    z-index: 5;
+    transform-origin: bottom center;
+    color: #18353a;
+    text-shadow: 3px 0 4px white; }
+  #pomodoro .char1 {
+    transform: rotate(-38.57143deg); }
+  #pomodoro .char2 {
+    transform: rotate(-32.14286deg); }
+  #pomodoro .char3 {
+    transform: rotate(-25.71429deg); }
+  #pomodoro .char4 {
+    transform: rotate(-19.28571deg); }
+  #pomodoro .char5 {
+    transform: rotate(-12.85714deg); }
+  #pomodoro .char6 {
+    transform: rotate(-6.42857deg); }
+  #pomodoro .char7 {
+    transform: rotate(0deg); }
+  #pomodoro .char8 {
+    transform: rotate(6.42857deg); }
+  #pomodoro .char9 {
+    transform: rotate(12.85714deg); }
+  #pomodoro .char10 {
+    transform: rotate(19.28571deg); }
+  #pomodoro .char11 {
+    transform: rotate(25.71429deg); }
+  #pomodoro .char12 {
+    transform: rotate(32.14286deg); }
+  #pomodoro .char13 {
+    transform: rotate(38.57143deg); }
+  #pomodoro .char14 {
+    transform: rotate(45deg); }
   #pomodoro button {
     font-size: 12px;
     cursor: pointer;
@@ -137,35 +181,90 @@ body {
     font: 14px 'Courgette', cursive;
     text-shadow: 0 0 1px #18353a; }
   #pomodoro .l1 {
-    transform: rotate(0deg); }
-  #pomodoro .l2 {
-    transform: rotate(30deg); }
-  #pomodoro .l3 {
-    transform: rotate(60deg); }
-  #pomodoro .l4 {
-    transform: rotate(90deg); }
-  #pomodoro .l5 {
-    transform: rotate(120deg); }
-  #pomodoro .l6 {
-    transform: rotate(150deg); }
-  #pomodoro .l1, #pomodoro .l2, #pomodoro .l3, #pomodoro .l4, #pomodoro .l5, #pomodoro .l6 {
+    transform: rotate(30deg);
     left: 98px;
     z-index: 5; }
-  #pomodoro .l1::before, #pomodoro .l1::after, #pomodoro .l2:before, #pomodoro .l2:after, #pomodoro .l3:before, #pomodoro .l3:after, #pomodoro .l4:before, #pomodoro .l4:after, #pomodoro .l5:before, #pomodoro .l5:after, #pomodoro .l6:before, #pomodoro .l6:after {
+  #pomodoro .l1::before, #pomodoro .l1::after {
     position: absolute;
     content: "";
     left: 0;
     padding: 5px 2px 5px 1px;
     background: #18353a; }
-  #pomodoro .l1::before, #pomodoro .l2::before, #pomodoro .l3::before, #pomodoro .l4::before, #pomodoro .l5::before, #pomodoro .l6::before {
+  #pomodoro .l1::before {
     top: 5px; }
-  #pomodoro .l1::after, #pomodoro .l2::after, #pomodoro .l3::after, #pomodoro .l4::after, #pomodoro .l5::after, #pomodoro .l6::after {
+  #pomodoro .l1::after {
     bottom: 5px; }
-  #pomodoro .ln1::before, #pomodoro .ln2::before, #pomodoro .ln3::before, #pomodoro .ln4::before, #pomodoro .ln5::before, #pomodoro .ln6::before,
-  #pomodoro .ln7::before, #pomodoro .ln8::before, #pomodoro .ln9::before, #pomodoro .ln10::before, #pomodoro .ln11::before, #pomodoro .ln12::before,
-  #pomodoro .ln13::before, #pomodoro .ln14::before, #pomodoro .ln15::before, #pomodoro .ln16::before, #pomodoro .ln17::before, #pomodoro .ln18::before,
-  #pomodoro .ln19::before, #pomodoro .ln20::before, #pomodoro .ln21::before, #pomodoro .ln22::before, #pomodoro .ln23::before, #pomodoro .ln24::before,
-  #pomodoro .ln25::before, #pomodoro .ln26::before, #pomodoro .ln27::before, #pomodoro .ln28::before, #pomodoro .ln29::before, #pomodoro .ln30::before {
+  #pomodoro .l2 {
+    transform: rotate(60deg);
+    left: 98px;
+    z-index: 5; }
+  #pomodoro .l2::before, #pomodoro .l2::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    padding: 5px 2px 5px 1px;
+    background: #18353a; }
+  #pomodoro .l2::before {
+    top: 5px; }
+  #pomodoro .l2::after {
+    bottom: 5px; }
+  #pomodoro .l3 {
+    transform: rotate(90deg);
+    left: 98px;
+    z-index: 5; }
+  #pomodoro .l3::before, #pomodoro .l3::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    padding: 5px 2px 5px 1px;
+    background: #18353a; }
+  #pomodoro .l3::before {
+    top: 5px; }
+  #pomodoro .l3::after {
+    bottom: 5px; }
+  #pomodoro .l4 {
+    transform: rotate(120deg);
+    left: 98px;
+    z-index: 5; }
+  #pomodoro .l4::before, #pomodoro .l4::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    padding: 5px 2px 5px 1px;
+    background: #18353a; }
+  #pomodoro .l4::before {
+    top: 5px; }
+  #pomodoro .l4::after {
+    bottom: 5px; }
+  #pomodoro .l5 {
+    transform: rotate(150deg);
+    left: 98px;
+    z-index: 5; }
+  #pomodoro .l5::before, #pomodoro .l5::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    padding: 5px 2px 5px 1px;
+    background: #18353a; }
+  #pomodoro .l5::before {
+    top: 5px; }
+  #pomodoro .l5::after {
+    bottom: 5px; }
+  #pomodoro .l6 {
+    transform: rotate(180deg);
+    left: 98px;
+    z-index: 5; }
+  #pomodoro .l6::before, #pomodoro .l6::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    padding: 5px 2px 5px 1px;
+    background: #18353a; }
+  #pomodoro .l6::before {
+    top: 5px; }
+  #pomodoro .l6::after {
+    bottom: 5px; }
+  #pomodoro .ln1::before {
     padding: 5px 1px 5px 0;
     left: 0px;
     top: 0px;
@@ -173,11 +272,471 @@ body {
     position: absolute;
     display: block;
     content: ""; }
-  #pomodoro .ln1::after, #pomodoro .ln2::after, #pomodoro .ln3::after, #pomodoro .ln4::after, #pomodoro .ln5::after, #pomodoro .ln6::after,
-  #pomodoro .ln7::after, #pomodoro .ln8::after, #pomodoro .ln9::after, #pomodoro .ln10::after, #pomodoro .ln11::after, #pomodoro .ln12::after,
-  #pomodoro .ln13::after, #pomodoro .ln14::after, #pomodoro .ln15::after, #pomodoro .ln16::after, #pomodoro .ln17::after, #pomodoro .ln18::after,
-  #pomodoro .ln19::after, #pomodoro .ln20::after, #pomodoro .ln21::after, #pomodoro .ln22::after, #pomodoro .ln23::after, #pomodoro .ln24::after,
-  #pomodoro .ln25::after, #pomodoro .ln26::after, #pomodoro .ln27::after, #pomodoro .ln28::after, #pomodoro .ln29::after, #pomodoro .ln30::after {
+  #pomodoro .ln1::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln2::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln2::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln3::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln3::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln4::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln4::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln5::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln5::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln6::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln6::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln7::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln7::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln8::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln8::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln9::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln9::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln10::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln10::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln11::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln11::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln12::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln12::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln13::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln13::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln14::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln14::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln15::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln15::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln16::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln16::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln17::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln17::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln18::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln18::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln19::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln19::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln20::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln20::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln21::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln21::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln22::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln22::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln23::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln23::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln24::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln24::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln25::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln25::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln26::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln26::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln27::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln27::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln28::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln28::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln29::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln29::after {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln30::before {
+    padding: 5px 1px 5px 0;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    display: block;
+    content: ""; }
+  #pomodoro .ln30::after {
     padding: 5px 1px 5px 0;
     left: 0px;
     bottom: 0px;

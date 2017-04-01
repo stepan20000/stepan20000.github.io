@@ -32,12 +32,15 @@ function MakePomodoro($pomodoro) {
    
   $('.controls').click(function(evt) {
     _this._makeControl(evt);    
-  });     
+  });
+  
+  $(this.idPom + ' .plate').lettering();
+
 }
 
 MakePomodoro.prototype._makeDial = function() {
   for (i=1;i<=6;i++) {
-      $('#' + this.pomodoro.attr('id') + ' .center').before('<div class="l'+i+'"></div>');
+      $(this.idPom + ' .center').before('<div class="l'+i+'"></div>');
   }
   for (i=1;i<=30;i++) {
       $(this.idPom + ' .center').before('<div class="ln'+i+'"></div>');
@@ -57,7 +60,7 @@ MakePomodoro.prototype._makeDial = function() {
 MakePomodoro.prototype._showHideSetting = function () {
   if($(this.idPom + ' .timers').css("opacity") == "0") {
     $(this.idPom + ' .timers').css("opacity", "1.0");
-    $(this.idPom).css('height', "500px");
+    $(this.idPom).css('height', "520px");
     $(this.idPom).css('transition', '1.0s');
     $(this.idPom + ' .timers').css('transition', '1.0s 0.8s');
     $(this.idPom + ' .show-set').html('<i class="fa fa-chevron-up" aria-hidden="true"></i>' +
@@ -66,7 +69,7 @@ MakePomodoro.prototype._showHideSetting = function () {
   }
   else {
     $(this.idPom + ' .timers').css("opacity", ".0");
-    $(this.idPom).css('height', "340px");
+    $(this.idPom).css('height', "360px");
     $(this.idPom).css('transition', '1.0s 0.8s');
     $(this.idPom + ' .timers').css('transition', '1.0s');
     $(this.idPom + ' .show-set').html('<i class="fa fa-chevron-down" aria-hidden="true"></i>' + 
