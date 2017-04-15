@@ -48,4 +48,11 @@ var worksList = [
 		linkToDemo: "https://stepan20000.github.io/calculator.html",
 		image: "images/portfolio_ver_0/calc.png",
 	},
+	{	
+		id: 7,
+		title: "Pomodoro Timer",
+		description: 'The realization of <a href="https://www.freecodecamp.com/challenges/build-a-pomodoro-clock" target="_blank">"Build a Pomodoro Clock"</a> task on freeCodeCamp. Created using jQuery',
+		linkToDemo: "https://stepan20000.github.io/pomodoro.html",
+		image: "images/portfolio_ver_0/pomodoro.png",
+	}
 ];
