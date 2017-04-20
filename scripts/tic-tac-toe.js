@@ -106,7 +106,6 @@ MakeTicTacToe.prototype._loadScreen = function (screenId, line, player) {
       $(this.id + ' .result p').html('It was a drow');
       break;
     case 'pickOutCells':
-      console.log('loadScreen piskOutCells', line);
       for(var i in line){
         $(line[i]).addClass('check');
       }
@@ -182,7 +181,6 @@ MakeTicTacToe.prototype._humanRun = function (_this) {
     $(el).fadeToggle();
   } 
   function humanClick(evt) {
-    console.log('humanClick', _this.blinkingInt);
     if ($(evt.target).html() === '') {
 // cellnum is a number of the cell where player made click. Index in this.grid correspond the class of the cell at the html table
       var cellNum = Number($(evt.target).attr('class')[0]);
@@ -222,7 +220,6 @@ MakeTicTacToe.prototype._computerRun = function (_this) {
 //];
   function analize (grid) {
     var freeCells = [], respond = [false, false, false, false];
-    console.log('checkForWinLose ');
 // Check gorizontal lines
     for (var i = 0; i < 9; i+=3) {
       switch(grid[i] + grid[i + 1] + grid[i + 2]) {
@@ -422,9 +419,7 @@ MakeTicTacToe.prototype._computerRun = function (_this) {
     //Check diagonals, diagonal 0-4-8
       if (matrix[0] + matrix[4] + matrix[8] == player.sym + player.sym) {
         count ++;
-                  console.log(count);
         if (count > 1) {
-                              console.log('I sent it here');
           return report[4][i];          
         }
       }
@@ -562,9 +557,7 @@ MakeTicTacToe.prototype._computerRun = function (_this) {
             }
             else {
                stepTo = 4;
-               console.log(stepTo);
             }
-                    console.log('should not be here ????', stepTo); 
           } 
           else {
             if (_this.grid[2] === player.sym) {
@@ -685,7 +678,6 @@ MakeTicTacToe.prototype._computerRun = function (_this) {
         else {
           if (_this.runs < 7) {
             stepTo = findFork(report);
-            console.log("stepTo after findFork ", stepTo );
             if (stepTo === false) {
               if (report[2] !== false) {
                 stepTo = report[2];
@@ -716,7 +708,6 @@ MakeTicTacToe.prototype._computerRun = function (_this) {
 }
 
 MakeTicTacToe.prototype._checkWin = function (player) {
-  console.log('checkWin');
   var _this = this;
   this.runs++;
   if (this.runs > 4) {
@@ -727,7 +718,6 @@ MakeTicTacToe.prototype._checkWin = function (player) {
         for (var j = 0; j < 3; j++) {
           line.push($(this.id + ' .' + (i + j))[0]);
         }
-        console.log("mistake win");      
          this._winDrawHandler('win',player, line);
          return;
       }
@@ -738,7 +728,6 @@ MakeTicTacToe.prototype._checkWin = function (player) {
         for (var j = 0; j < 9; j+=3) {
           line.push($(this.id + ' .' + (i + j))[0]);
         }      
-        console.log("mistake win");        
         this._winDrawHandler('win',player, line);
         return;
       }
@@ -748,7 +737,6 @@ MakeTicTacToe.prototype._checkWin = function (player) {
       for (var i = 0; i < 9; i+=4) {
         line.push($(this.id + ' .' + i)[0]);
       }  
-        console.log("mistake win");
         this._winDrawHandler('win',player, line);
         return;
      }
@@ -756,7 +744,6 @@ MakeTicTacToe.prototype._checkWin = function (player) {
       for (var i = 2; i < 7; i+=2) {
         line.push($(this.id + ' .' + i)[0]);
       }
-      console.log("mistake win");
       this._winDrawHandler('win',player, line);
       return;
     }
@@ -772,13 +759,8 @@ MakeTicTacToe.prototype._checkWin = function (player) {
 }
 
 MakeTicTacToe.prototype._winDrawHandler = function (result, player, line) {
-  console.log('winDrawHandler');
   var _this = this;
-  console.log(result);
   function startNewGame() {
-    console.log('startNewGame'); 
-    console.log(line);
-    console.log(_this);
     _this._clearMatrix(line);
     _this._play(_this);
   }
@@ -819,5 +801,4 @@ MakeTicTacToe.prototype._winDrawHandler = function (result, player, line) {
 
 $(document).ready(function($) { 
   var tictac = new MakeTicTacToe($('#tictac'));    
-
 });

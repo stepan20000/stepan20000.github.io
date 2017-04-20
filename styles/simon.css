@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css?family=Righteous");
+@font-face {
+  font-family: digital;
+  src: url(../fonts/digital-7-mono.ttf) format("truetype"); }
+#simon {
+  position: relative;
+  background: #434343;
+  border-radius: 50%;
+  color: white;
+  font-family: 'Kavivanar', cursive;
+  top: 100px;
+  width: 500px;
+  height: 500px;
+  margin: auto; }
+  #simon .box {
+    border-radius: 50%;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 480px;
+    height: 480px;
+    overflow: hidden; }
+    #simon .box .green, #simon .box .red, #simon .box .yellow, #simon .box .blue {
+      position: absolute;
+      width: 230px;
+      height: 230px; }
+    #simon .box .green {
+      top: 0;
+      left: 0;
+      background-color: #1d631d; }
+    #simon .box .red {
+      top: 0;
+      left: 250px;
+      background-color: #c43b3b; }
+    #simon .box .yellow {
+      top: 250px;
+      left: 0;
+      background-color: #c4c43b; }
+    #simon .box .blue {
+      top: 250px;
+      left: 250px;
+      background-color: #4242bd; }
+  #simon .center {
+    background-color: whitesmoke;
+    border: 20px solid #434343;
+    border-radius: 50%;
+    position: absolute;
+    top: 120px;
+    left: 120px;
+    width: 220px;
+    height: 220px; }
+    #simon .center .simon-plate {
+      position: absolute;
+      top: 30px;
+      text-align: center;
+      margin: auto;
+      width: 100%; }
+      #simon .center .simon-plate p {
+        font: bold 40px 'Righteous', cursive;
+        letter-spacing: 1px;
+        color: #352d2d;
+        text-shadow: 1px 1px 3px #b1c0c2; }
+    #simon .center .controls {
+      position: absolute;
+      top: 80px;
+      width: 100%;
+      height: 60px; }
+      #simon .center .controls .screen {
+        margin-left: 20px;
+        background-color: #291515;
+        color: #c62828;
+        font-family: digital;
+        font-size: 50px;
+        width: 60px;
+        height: 45px;
+        position: absolute;
+        border-radius: 8px;
+        text-align: center;
+        top: 6px;
+        border: 2px solid #999999; }
+        #simon .center .controls .screen .screen-inner {
+          position: absolute;
+          top: -8px;
+          left: 8px; }
+      #simon .center .controls button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 2px 6px 0 #434343, 0 6px 15px 0 #43434380;
+        border: 2px solid #999999; }
+      #simon .center .controls button:active {
+        transform: translateY(2px);
+        box-shadow: 0 0px 8px 0 #434343, 0 0px 12px 0 #43434380; }
+      #simon .center .controls .start {
+        background-color: #d62929;
+        position: absolute;
+        top: 10px;
+        left: 100px; }
+      #simon .center .controls .strict {
+        background-color: #e3e31c;
+        position: absolute;
+        top: 10px;
+        left: 160px; }
+      #simon .center .controls .led {
+        background-color: #0a4040;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        top: -10px;
+        left: 188px;
+        border: 2px solid #999999; }
+    #simon .center .onoffswitch {
+      position: absolute;
+      width: 70px;
+      top: 170px;
+      left: 75px;
+      height: 20px;
+      border-radius: 10px; }
+      #simon .center .onoffswitch .onoffswitch-checkbox {
+        display: none; }
+      #simon .center .onoffswitch .onoffswitch-label {
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid #999999;
+        border-radius: 10px; }
+      #simon .center .onoffswitch .onoffswitch-inner {
+        display: block;
+        width: 200%;
+        margin-left: -100%;
+        transition: margin 0.3s ease-in 0s; }
+      #simon .center .onoffswitch .onoffswitch-inner:before, #simon .center .onoffswitch .onoffswitch-inner:after {
+        display: block;
+        float: left;
+        width: 50%;
+        height: 20px;
+        padding: 0;
+        line-height: 20px;
+        font-size: 12px;
+        color: white;
+        font-family: Trebuchet, Arial, sans-serif;
+        font-weight: bold;
+        box-sizing: border-box; }
+      #simon .center .onoffswitch .onoffswitch-inner:before {
+        content: "ON";
+        padding-left: 5px;
+        background-color: #3D3DB4;
+        color: #FFFFFF; }
+      #simon .center .onoffswitch .onoffswitch-inner:after {
+        content: "OFF";
+        padding-right: 5px;
+        background-color: #303030;
+        color: #FFFFFF;
+        text-align: right; }
+      #simon .center .onoffswitch .onoffswitch-switch {
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin: 5px 7px;
+        background: #FFFFFF;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 41px;
+        border: 2px solid #999999;
+        border-radius: 3px;
+        transition: all 0.3s ease-in 0s; }
+      #simon .center .onoffswitch .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+        margin-left: 0; }
+      #simon .center .onoffswitch .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        right: 0px; }
+    #simon .center .lettering {
+      font: bold 11px Arial, Helvetica, sans-serif;
+      color: #434343; }
+    #simon .center .count {
+      position: absolute;
+      top: 58px;
+      left: 33px; }
+    #simon .center .start-strict {
+      position: absolute;
+      top: 60px;
+      left: 100px;
+      word-spacing: 20px; }
+
+/*# sourceMappingURL=simon.css.map */
