@@ -68,6 +68,12 @@ var worksList = [
 		description: 'The realization of <a href="https://www.freecodecamp.com/challenges/build-a-simon-game" target="-blank">"Build a Simon Game"</a> task on freeCodeCamp.',
 		linkToDemo: "https://stepan20000.github.io/simon.html",
 		image: "images/portfolio-ver-0/simon.png",
-	}
-	
+	},
+    {
+      id: 10,
+      title: "Barbershop",
+      description: 'The implementation of popular task of making web pages layout based on PSD files. BEM metodology is used',
+      linkToDemo: "https://stepan20000.github.io/barbershop/index.html",
+      image: "images/portfolio-ver-0/barbershop.png",
+    }
 ];

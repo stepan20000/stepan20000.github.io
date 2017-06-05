@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru-UA">
+<head>
+  <title>Index Barbershop</title>
+
+  <meta charset="UTF-8">
+  <meta name="description" content="barbershoptest">
+  <meta name="keywords" content="HTML,CSS,JavaScript">
+  <meta name="author" content="Stepan Yefimov" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="style.css" rel="stylesheet"> 
+  <script src="index.js"></script>
+  
+</head>
+<body class="body body_index">
+  <header class="header">
+    <nav class="container clearfix">
+      <a class="header__item" href="#" title="информация">информация</a>
+      <a class="header__item" href="#" title="новости">новости</a>
+      <a class="header__item" href="price.html" title="прайс-лист">прайс-лист</a>
+      <a class="header__item" href="shop.html" title="магазин">магазин</a>
+      <a class="header__item" href="#" title="контакты">контакты</a>
+      <a class="header__item header__item_login" id="slf" href="#" title="">&nbsp; вход</a>
+    </nav>
+  </header>
+  <article class="container clearfix">
+    <h1 class="logotype">
+      <img src="img/borodinski-logo.png" alt="Бородински логотип">
+    </h1>
+    <div class="advantages">
+      <div class="advantages__item">
+        <h3 class="advantages__head">быстро</h3>
+        <div class="advantages__desc">
+          <p>МЫ ДЕЛАЕМ СВОЮ РАБОТУ БЫСТРО! ДВА ЧАСА</p>
+          <p>ПРОЛЕТЯТ НЕЗАМЕТНО И ВЫ — СЧАСТЛИВЫЙ</p>
+          <p>ОБЛАДЕТЕЛЬ СТИЛЬНОЙ СТРИЖКИ-МИНУТКИ!</p>
+        </div>
+      </div>
+      <div class="advantages__item">
+        <h3 class="advantages__head">круто</h3>
+        <div class="advantages__desc">
+          <p>ЗАБУДЬТЕ, КАК ВЫ СТРИГЛИСЬ РАНЬШЕ.</p>
+          <p>МЫ СДЕЛАЕМ ИЗ ВАС ЗВЕЗДУ ФУТБОЛА ИЛИ КИНО!</p>
+          <p>ВО ВСЯКОМ СЛУЧАЕ ВНЕШНЕ.</p>
+        </div>
+      </div>
+      <div class="advantages__item">
+        <h3 class="advantages__head">дорого</h3>
+        <div class="advantages__desc">
+          <p>НАШИ МАСТЕРА — ПРОФЕССИОНАЛЫ СВОЕГО ДЕЛА И</p>
+          <p>НЕ МОГУТ СТОИТЬ ДЕШЕВО. К ТОМУ ЖЕ, РАЗВЕ ЦЕНА</p>
+          <p>НЕ ДАЕТ ОПРЕДЕЛЕНЫЙ СТАТУС?</p>
+        </div>
+      </div>
+    </div> <!-- .advantages -->
+    <div class="news-photo clearfix">
+      <section class="news-photo__news">
+        <h2 class="news-photo__head">новости</h2>
+        <div class="news-photo__content">
+          <p>
+            НАМ НАКОНЕЦ ЗАВЕЗЛИ ЯГЕРМАЙСТЕР! ТЕПЕРЬ ВЫ МОЖЕТЕ ПРОПУСТИТЬ СТАКАНЧИК ВО ВРЕМЯ СТРИЖКИ
+          </p>
+          <time class="news-photo__date" datetime="2017-01-18">11 января</time>
+        </div>    
+        <div class="news-photo__content">
+          <p>
+            В НАШЕЙ КОМАНДЕ ПОПОЛНЕНИЕ, БОРИС «БРИТВА» СТРИГУНЕЦ, ОБЛАДЕТЕЛЬ МНОЖЕСТВА ТИТУЛОВ И НАГРАД ПОПОЛНИЛ НАШИ СТРОЙНЫЕ РЯДЫ
+          </p>
+          <time class="news-photo__date" datetime="2017-01-18">18 января</time>
+        </div>
+        <div class="controls">          
+          <a class="btn" href="#">Все новости</a>
+        </div>
+      </section>     
+      <section class="news-photo__photo">
+        <h2 class="news-photo__head">фотогалерея</h2>
+        <div class="news-photo__content">
+          <figure>
+            <a href="#" title="модальное окно">
+              <img class="news-photo__cur-img" src="img/barbershop-room.png" alt="Фото зала парикмахерской">
+            </a>
+          </figure>
+        </div>
+        <div class="controls">
+          <a class="btn" href="#">назад</a>
+          <a class="btn controls__right" href="#">вперед</a>
+        </div>
+      </section>
+    </div> <!-- news-photo -->
+    
+    <div class="container__divider"></div>
+    
+    <div class="contacts clearfix">
+      <section class="contacts__info">
+        <h2 class="contacts__head">Контактная информация</h2>
+        <div class="contacts__content">
+          <address class="address">
+            <p>БАРБЕРШОП «БОРОДИНСКИЙ»</p> 
+            <p>АДРЕС: Г. САНКТ-ПЕТЕРБУРГ, Б. КОНЮШЕННАЯ, Д. 19/8</p>
+            <p>ТЕЛЕФОН: +7 (495) 666-02-66</p>
+          </address>
+        </div>
+        <div class="contacts__content contacts__content_less-margin">
+          <p>ВРЕМЯ РАБОТЫ:</p>
+          <p>ПН — ПТ: С 10:00 ДО 22:00</p>
+          <p>СБ — ВС: С 10:00 ДО 19:00</p>            
+        </div>
+        <div class="controls">
+          <a href="#" class="btn">как проехать</a>
+          <a href="#" class="btn controls__right">обратная связь</a>
+        </div>
+      </section>
+      <section class="contacts__contact">
+        <h2 class="contacts__head">записаться</h2>
+        <div class="contacts__content contacts__content_less-margin">
+          <p>УКАЖИТЕ ЖЕЛАЕМУЮ ДАТУ И ВРЕМЯ И МЫ СВЯЖЕМСЯ</p>
+          <p>С ВАМИ ДЛЯ ПОДТВЕРЖДЕНИЯ БРОНИ</p>
+        </div>
+        <form class="form controls" action="yyy.xxx">
+          <input type="text" id="contact-me__date" name="date" class="form__input" size="7" placeholder="ДАТА">
+          <label class="form__label_hidden" for="contact-me__date">дата</label>
+          <input type="text" id="contact-me__time" name="time" class="form__input controls__right" size="7" placeholder="ВРЕМЯ">
+          <label class="form__label_hidden" for="contact-me__time">время</label>
+          <input type="text" id="contact-me__name" name="name" class="form__input" size="7" placeholder="ВАШЕ ИМЯ">
+          <label class="form__label_hidden" for="contact-me__name">ваше имя</label>
+          <input type="text" id="contact-me__tel" name="tel" class="form__input controls__right" size="7" placeholder="ТЕЛЕФОН">
+          <label class="form__label_hidden" for="contact-me__tel">телефон</label>
+          <input type="submit" class="btn btn_large" value="ОТПРАВИТЬ">
+        </form>
+      </section>
+    </div>
+    <div class="container__divider"></div>
+    <div class="container__divider"></div>
+
+  </article> <!-- .container -->
+
+      
+      
+  <!-- --------------------- LOGIN AND MAP ---------------------- -->   
+      
+  <section class="login">
+    <h2 class="login__head">личный кабинет</h2>
+      <p class="login__text">
+        Введите пожалуйста свой логин и пароль 
+      </p>
+    <form class="form" action="yyy.xxx">
+      <input type="text" id="contact-me__login" name="userid" class="form__input form__input_login" size="21" maxlength="50" placeholder="ЛОГИН">
+      <label class="form__label_hidden" for="contact-me__login">дата</label>
+      <input type="password" id="contact-me__password" name="psw" class="form__input form__input_psw" size="21" maxlength="50" placeholder="ПАРОЛЬ">
+      <label class="form__label_hidden" for="contact-me__password">время</label>
+
+      <input type="checkbox" id="remember-me" name="rem" class="form__input form__label_hidden">
+      <label class="login__text form__label_checkbox" for="remember-me">запомните меня</label>
+      <a class="login__link login__text" href="#" title="Я забыл пароль">я забыл пароль</a>
+
+      <input type="submit" class="btn btn_large" value="ВОЙТИ">        
+    </form>
+    <a id="hlf" href="#" class="close" title="Закрыть форму входа"></a>
+  </section>
+  <div class="map">
+    <a href="#" class="close" id="hm" title="Закрыть карту"></a> 
+    <figure>
+      <img src="img/map.png" alt="Карта проезда">
+    </figure>
+  </div>
+
+    
+  <footer class="footer">
+    <div class="container">
+      <address class="footer__item">
+        <p>БАРБЕРШОП «БОРОДИНСКИЙ»</p>
+        <p>АДРЕС: Г. САНКТ-ПЕТЕРБУРГ, УЛ. Б. КОНЮШЕННАЯ, Д. 19/8</p>
+        <p><a class="footer__link" href="#" title="Карта проезда" id="sm">КАК НАС НАЙТИ?</a></p>
+        <p>ТЕЛЕФОН: +7 (495) 666-02-66</p>
+      </address>
+      <div class="footer__item footer__social">
+        <p class="footer__semihead">ДАВАЙТЕ ДРУЖИТЬ!</p>
+        <div class="social">
+          <a href="https://vk.com/" class="social__social-icon social__social-icon_vk" title="ВКонтакте"></a>
+          <a href="https://facebook.com" class="social__social-icon social__social-icon_fb" title="Facebook"></a>
+          <a href="https://instagram.com" class="social__social-icon social__social-icon_in" title="Instagram"></a>
+        </div>
+      </div>
+      <div class="footer__item footer__copyright">
+        <p class="footer__semihead">РАЗРАБОТАНО:</p>
+        <a class="btn btn_hover_white" href="https://htmlacademy.ru" title="HTML academy">htmlacademy.ru</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

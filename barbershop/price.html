@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru-UA">
+<head>
+  <title>Prise Barbershop</title>
+
+  <meta charset="UTF-8">
+  <meta name="description" content="barbershoptest">
+  <meta name="keywords" content="HTML,CSS,JavaScript">
+  <meta name="author" content="Stepan Yefimov" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="style.css" rel="stylesheet"> 
+  <script src="index.js"></script>
+  
+</head>
+<body class="body">
+  <header class="header">
+    <nav class="container clearfix">
+      <a class="header__item header__logo" href="/index.html"><img src="img/logo.png" alt="логотип компании"></a>
+      <a class="header__item" href="#" title="информация">информация</a>
+      <a class="header__item" href="#" title="новости">новости</a>
+      <a class="header__item header__item_current" title="прайс-лист">прайс-лист</a>
+      <a class="header__item" href="shop.html" title="магазин">магазин</a>
+      <a class="header__item" href="#" title="контакты">контакты</a>
+      <a class="header__item header__item_login" id="slf" href="#" title="">&nbsp; вход</a>
+    </nav>
+  </header>
+  <div class="background">
+    <div class="container clearfix">
+      <div class="top">
+        <h2 class="top__header">прайс-лист</h2>
+          <a class="top__item" href="index.html" title="главная страница">главная</a>
+          <a class="top__item top__item_current top__item_mark" title="">прайс-лист</a>
+      </div>
+      <div class="price clearfix">
+        <h1 class="price__head">ИСТИННО МУЖСКАЯ КЛАССИКА</h1>
+        
+        
+        
+        <section class="price__item">
+          <h3 class="container__head">МЫ ИСПОЛЬЗУЕМ ТОЛЬКО <br> ЛУЧШИЕ СРЕДСТВА:</h3>
+          <ul class="list list_price">
+            <li class="list__item list__item_price">Baxter of California</li>
+            <li class="list__item list__item_price">Mr Natty</li>
+            <li class="list__item list__item_price">Suavecito</li>
+            <li class="list__item list__item_price">Malin+Goetz</li>
+          </ul>
+        </section>
+        <section class="price__item price__item_right">
+          <h3 class="container__head container__head_before-table">ЦЕНЫ НА УСЛУГИ <br> НАШИХ МАСТЕРОВ:</h3>
+          <table class="table">
+            <tr class="table__row">
+              <td class="table__cell table__cell_name">стрижка</td>
+              <td class="table__cell table__cell_value">1500 р.</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__cell table__cell_name">стрижка бороды</td>
+              <td class="table__cell table__cell_value">500 р.</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__cell table__cell_name">накрутка усов</td>
+              <td class="table__cell table__cell_value">350 р.</td>
+            </tr>
+          </table>
+        </section>
+        <br><br><br>
+        <section>
+          <h3 class="container__head">НЕСКОЛЬКО СЛОВ О НАС:</h3>
+          <div class="price__item_wide">
+            Наша парикмахерская занимается исключительно мужскими стрижками. Стрижка каждого клиента для нас - это уникальная и продуманная до мелочей работа. Мы не работаем на количество, мы делаем качество.<br>
+            Наша мастерская расположена в центре города, поэтому сделать стильную стрижку можно в любое время, даже в обеденный перерыв. Здесь вы можете погрузиться в удобную для вас атмосферу, чувствовать себя комфортно и свободно!
+          </div>
+        </section>
+      </div> <!-- price -->
+    </div> <!-- .container -->
+  </div> <!-- .backgound -->
+
+      
+      
+  <!-- --------------------- LOGIN AND MAP ---------------------- -->   
+
+  <section class="login content__item">
+    <h2 class="content__header">личный кабинет</h2>
+    <div class="content__cont content__cont_compact">
+      <p>
+        ВВедите пожалуйста свой логин и пароль
+      </p>
+    </div>             
+    <div class="contact-me">
+      <form class="form" action="yyy.xxx">
+        <input type="text" id="contact-me__login" name="userid" class="form__input form__input_login" size="21" maxlength="50" placeholder="ЛОГИН">
+        <label class="form__label_hidden" for="contact-me__login">дата</label>
+        <input type="password" id="contact-me__password" name="psw" class="form__input form__input_psw" size="21" maxlength="50" placeholder="ПАРОЛЬ">
+        <label class="form__label_hidden" for="contact-me__password">время</label>
+
+        <input type="checkbox" id="remember-me" name="rem" class="form__input form__label_hidden">
+        <label class="form__label_checkbox" for="remember-me">запомните меня</label>
+        <a class="link-in-text content__item_right" href="#" title="Я забыл пароль">я забыл пароль</a>
+
+        <input type="submit" class="btn btn_large" value="ВОЙТИ">        
+      </form>
+    </div>
+    <a id="hlf" href="#" class="close" title="Закрыть форму входа"></a>
+  </section>
+  <div class="map">
+    <a href="#" class="close" id="hm" title="Закрыть карту"></a> 
+    <figure>
+      <img src="img/map.png" alt="Карта проезда">
+    </figure>
+  </div>
+
+    
+  <footer class="footer">
+    <div class="container">
+      <address class="footer__item">
+        <p>БАРБЕРШОП «БОРОДИНСКИЙ»</p>
+        <p>АДРЕС: Г. САНКТ-ПЕТЕРБУРГ, УЛ. Б. КОНЮШЕННАЯ, Д. 19/8</p>
+        <p><a class="footer__link" href="#" title="Карта проезда" id="sm">КАК НАС НАЙТИ?</a></p>
+        <p>ТЕЛЕФОН: +7 (495) 666-02-66</p>
+      </address>
+      <div class="footer__item footer__social">
+        <p class="footer__semihead">ДАВАЙТЕ ДРУЖИТЬ!</p>
+        <div class="social">
+          <a href="https://vk.com/" class="social__social-icon social__social-icon_vk" title="ВКонтакте"></a>
+          <a href="https://facebook.com" class="social__social-icon social__social-icon_fb" title="Facebook"></a>
+          <a href="https://instagram.com" class="social__social-icon social__social-icon_in" title="Instagram"></a>
+        </div>
+      </div>
+      <div class="footer__item footer__copyright">
+        <p class="footer__semihead">РАЗРАБОТАНО:</p>
+        <a class="btn btn_hover_white" href="https://htmlacademy.ru" title="HTML academy">htmlacademy.ru</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,144 @@
+/*--- SHOP ---*/
+
+container {width: 960; padding-left=padding-right=10px marfin: auto;}
+    container__head
+    container__head_before-table
+    container__divider
+
+header
+    header__item
+    header__item_current
+    header__item_login
+    header__logo (логотип магазина в хидере)
+  
+footer
+    footer__item
+    footer__social
+    footer__copyright
+    footer__link
+    footer__semihead
+    
+social
+    social__social-icon
+    social__social-icon_vk
+    social__social-icon_fb
+    social__social-icon_in
+    
+btn
+    btn_hover_white
+    btn_large
+    btn_left
+    
+top
+    top__header
+    top__item
+    top__item_mark
+    top__item_current
+    
+list
+    list__item
+    list__item_price
+    list__item_item
+    
+filter
+    filter__set
+    filter__order
+    filter__head
+    filter__submit
+  
+form
+    form__input
+    form__input_login
+    form__input_psw
+    form__label_hidden
+    form__label_checkbox
+    form__label_radio
+    
+goods
+
+good
+    good__desc
+    good__href
+    
+price-buy
+   price-buy__price
+   price-buy__buy
+   price-buy_good
+   
+pages
+  pages__page
+  pages__page_current
+  
+login
+    login__head
+    login__link
+    login__text
+
+map
+
+close
+
+/*--- SHOP END ---*/
+
+/*---- PRICE ----*/
+
+price
+    price__head
+    price__item
+    price__item_right
+    price__iten_wide
+    
+table
+    table__row
+    table__cell
+    table__cell_name
+    table__cell_value
+    
+
+/*---- PRICE END ---*/
+
+/*---- ITEM ----*/
+
+item
+    item__left
+    item__right
+    item__large-img
+    item__small-img
+    item__img-set
+    item__art
+
+/*---- ITEM END ----*/
+
+/*----- INDEX ------*/
+
+body
+    body_index
+    
+logotype
+
+address
+
+advantages
+    advantages__item
+    advantages__head
+    advantages__desc
+    
+news-photo
+    news-photo__news
+    news-photo__photo
+    news-photo__head
+    news-photo__content
+    news-photo__date
+    news-photo__cur-img
+    
+contacts
+    contacts__info
+    contacts__contact
+    contacts__head
+    contacts__content
+    contacts__content_less-margin
+
+controls
+    controls__right
+
+/*---- INDEX END ----*/
