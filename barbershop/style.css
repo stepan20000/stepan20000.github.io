@@ -634,11 +634,7 @@
 .price__item_wide {
   margin-right: 100px;
   width: 92%;
-  -webkit-column-count: 2; /* Chrome, Safari, Opera */
-  -moz-column-count: 2; /* Firefox */
   column-count: 2;
-  -webkit-column-gap: 130px; /* Chrome, Safari, Opera */
-  -moz-column-gap: 130px; /* Firefox */
   column-gap: 128px;
   font-size: 12px;
   line-height: 23px;
@@ -687,7 +683,7 @@
   margin-right: -14px;
 }
 
-.item__img-set {background-attachment: 
+.item__img-set {
   text-align-last: justify;
   text-indent: -12px;
 }
